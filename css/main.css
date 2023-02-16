@@ -1,10 +1,6 @@
-body {
-  background-color: black;
-}
-
 #card {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   padding: 1rem;
   border-radius: 1rem;
   background-color: white;
@@ -18,17 +14,23 @@ body {
   flex-grow: 1;
 }
 #card #card-banner svg {
+  width: 1.5rem;
   fill: #7545d9;
 }
-#card h1 {
+#card h3 {
   color: #280460;
   margin: 0;
+  padding: 0;
   font-weight: bold;
 }
-#card h1 div {
+#card h3 div {
   color: #7545d9;
 }
 #card p {
+  margin: 0;
+  margin-top: 0.5rem;
+  padding: 0;
+  font-size: 0.5rem;
   color: #7b6dab;
 }
 
