@@ -1,3 +1,35 @@
+body {
+  background-color: black;
+}
 
+#card {
+  width: 200px;
+  height: 200px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+}
+#card #card-banner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+#card #card-banner svg {
+  fill: #7545d9;
+}
+#card h1 {
+  color: #280460;
+  margin: 0;
+  font-weight: bold;
+}
+#card h1 div {
+  color: #7545d9;
+}
+#card p {
+  color: #7b6dab;
+}
 
 /*# sourceMappingURL=main.css.map */
