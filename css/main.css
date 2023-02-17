@@ -25,4 +25,32 @@ body {
   font-weight: 600;
 }
 
+#design-system {
+  display: flex;
+  gap: 15px;
+  padding: 30px;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background: linear-gradient(#53dee9, #7645d9);
+}
+@media screen and (min-width: 968px) {
+  #design-system {
+    flex-direction: row;
+  }
+}
+#design-system > div {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+#design-system > div > section {
+  padding: 10px;
+  background: #fff;
+  opacity: 0.75;
+  backdrop-filter: blur(10px);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 /*# sourceMappingURL=main.css.map */
