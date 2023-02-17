@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
+/*
+      mobile            mobile-first
+  md  medium-size       bigger than 576px
+  lg  large-size        bigger than 852px
+  xl  extra-large-size  bigger than 968px
+*/
+/*
+    Media Query Handler
 
+    @include media(md|lg|xl) {
+        // content of the media query
+    }
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 500;
+  font-weight: 600;
+}
 
 /*# sourceMappingURL=main.css.map */
