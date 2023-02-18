@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/colors" as c;
 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
 
@@ -6,3 +7,60 @@ body {
   font-family: v.$font-kanit;
   font-weight: v.$font-bold;
 }
+/*--typography--start--*/
+.typo-title{
+  text-decoration: underline;
+  font-weight: v.$font-normal;
+  font-family: v.$font-kanit;
+}
+.typography-conainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.typo-48px{
+  font-size: v.$space-10;
+}
+.typo-32px{
+  font-size: v.$space-9;
+}
+.typo-24px{
+  font-size: v.$space-8;
+}
+.typo-20px{
+  font-size: v.$space-7;
+}
+.typo-16px{
+  font-size: v.$space-6;
+}
+
+
+.typo-bold{
+  font-weight: v.$font-bold;
+}
+.typo-regular{
+  font-weight: v.$font-normal;
+}
+.typo-h2{
+  color: c.$text;
+}
+.typo-span,
+.typo-h2 p:first-of-type{
+  color: c.$secondary;
+}
+
+.typo-body p:nth-child(1),
+.typo-body p:nth-child(2){
+  color: c.$textSubtle;
+}
+.typo-body p:last-child{
+  color: c.$inputSecondary ;
+}
+
+.typo-button p{
+  color: c.$white;
+}
+
+
+
+/*--typography--end--*/
