@@ -59,6 +59,9 @@ body:has(#design-system) {
   background-color: rgba(255, 255, 255, 0.7490196078);
   backdrop-filter: blur(10px);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 #design-system > div > section > h2 {
   margin-bottom: 10px;
@@ -68,8 +71,8 @@ body:has(#design-system) {
 }
 
 .card-small {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   padding: 1rem;
   border-radius: 1rem;
   background-color: white;
