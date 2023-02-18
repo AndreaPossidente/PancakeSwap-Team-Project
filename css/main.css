@@ -60,12 +60,51 @@ body:has(#design-system) {
   background-color: rgba(255, 255, 255, 0.7490196078);
   backdrop-filter: blur(10px);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 #design-system > div > section > h2 {
   margin-bottom: 10px;
 }
 #design-system > div > section > div {
   margin: 30px 15px 15px 15px;
+}
+
+.card-small {
+  width: 150px;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+}
+.card-small .card-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+.card-small .card-icon svg {
+  width: 1.5rem;
+  fill: #7545d9;
+}
+.card-small h3 {
+  color: #280460;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.card-small h3 div {
+  color: #7545d9;
+}
+.card-small p {
+  margin: 0;
+  margin-top: 0.5rem;
+  padding: 0;
+  font-size: 0.5rem;
+  color: #7b6dab;
 }
 
 .banner-warning {
