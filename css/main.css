@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
 /*
       mobile            mobile-first
   md  medium-size       bigger than 576px
@@ -25,70 +26,6 @@ body {
   font-weight: 600;
 }
 
-/*--typography--start--*/
-.typo-title {
-  text-decoration: underline;
-  font-weight: 500;
-  font-family: Kanit, sans-serif;
-}
-
-.typography-conainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.typo-48px {
-  font-size: 48px;
-}
-
-.typo-32px {
-  font-size: 32px;
-}
-
-.typo-24px {
-  font-size: 24px;
-}
-
-.typo-20px {
-  font-size: 20px;
-}
-
-.typo-16px {
-  font-size: 16px;
-}
-
-.typo-bold {
-  font-weight: 600;
-}
-
-.typo-regular {
-  font-weight: 500;
-}
-
-.typo-h2 {
-  color: #280d5f;
-}
-
-.typo-span,
-.typo-h2 p:first-of-type {
-  color: #7645d9;
-}
-
-.typo-body p:nth-child(1),
-.typo-body p:nth-child(2) {
-  color: #7a6eaa;
-}
-
-.typo-body p:last-child {
-  color: #d7caec;
-}
-
-.typo-button p {
-  color: #fff;
-}
-
-/*--typography--end--*/
 body:has(#design-system) {
   background: linear-gradient(#53dee9, #7645d9);
   min-height: 100vh;
@@ -207,5 +144,75 @@ body:has(#design-system) {
 .banner-warning > button.banner-warning-close-btn:hover {
   opacity: 0.75;
 }
+
+body {
+  font-family: Kanit, sans-serif;
+  font-weight: 600;
+}
+
+/*--typography--start--*/
+.typo-title {
+  text-decoration: underline;
+  font-weight: 500;
+  font-family: Kanit, sans-serif;
+}
+
+.typography-conainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.typo-48px {
+  font-size: 48px;
+}
+
+.typo-32px {
+  font-size: 32px;
+}
+
+.typo-24px {
+  font-size: 24px;
+}
+
+.typo-20px {
+  font-size: 20px;
+}
+
+.typo-16px {
+  font-size: 16px;
+}
+
+.typo-bold {
+  font-weight: 600;
+}
+
+.typo-regular {
+  font-weight: 500;
+}
+
+.typo-h2 {
+  color: #280d5f;
+}
+
+.typo-span,
+.typo-h2 p:first-of-type {
+  color: #7645d9;
+}
+
+.typo-body p:nth-child(1),
+.typo-body p:nth-child(2) {
+  color: #7a6eaa;
+}
+
+.typo-body p:last-child {
+  color: #d7caec;
+}
+
+.typo-button p {
+  color: #fff;
+}
+
+/*--typography--end--*/
 
 /*# sourceMappingURL=main.css.map */
