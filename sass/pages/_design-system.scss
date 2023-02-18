@@ -8,55 +8,55 @@ body {
   font-weight: v.$font-bold;
 }
 /*--typography--start--*/
-.typo-title{
+.typo-title {
   text-decoration: underline;
   font-weight: v.$font-normal;
   font-family: v.$font-kanit;
 }
-.typography-conainer{
+.typography-conainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.typo-48px{
+.typo-48px {
   font-size: v.$space-10;
 }
-.typo-32px{
+.typo-32px {
   font-size: v.$space-9;
 }
-.typo-24px{
+.typo-24px {
   font-size: v.$space-8;
 }
-.typo-20px{
+.typo-20px {
   font-size: v.$space-7;
 }
-.typo-16px{
+.typo-16px {
   font-size: v.$space-6;
 }
 
-.typo-bold{
+.typo-bold {
   font-weight: v.$font-bold;
 }
-.typo-regular{
+.typo-regular {
   font-weight: v.$font-normal;
 }
-.typo-h2{
+.typo-h2 {
   color: c.$text;
 }
 .typo-span,
-.typo-h2 p:first-of-type{
+.typo-h2 p:first-of-type {
   color: c.$secondary;
 }
 
 .typo-body p:nth-child(1),
-.typo-body p:nth-child(2){
+.typo-body p:nth-child(2) {
   color: c.$textSubtle;
 }
-.typo-body p:last-child{
-  color: c.$inputSecondary ;
+.typo-body p:last-child {
+  color: c.$inputSecondary;
 }
 
-.typo-button p{
+.typo-button p {
   color: c.$white;
 }
 
