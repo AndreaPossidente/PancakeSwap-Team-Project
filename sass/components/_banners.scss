@@ -1,0 +1,87 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// WARNING BANNER START
+.banner-warning {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  overflow: hidden;
+  background: linear-gradient(
+      0deg,
+      rgba(39, 38, 44, 0.4),
+      rgba(39, 38, 44, 0.4)
+    ),
+    linear-gradient(rgb(128, 81, 214) 0%, rgb(73, 34, 134) 100%);
+
+  @include m.media(lg) {
+    background: linear-gradient(#8051d6 0%, #492286 100%);
+  }
+
+  > div.banner-warning-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    > img {
+      height: auto;
+      width: 92px;
+      display: none;
+
+      @include m.media(lg) {
+        display: inline;
+      }
+    }
+    > div.banner-warning-content {
+      padding: v.$space-3;
+      width: 100%;
+      height: 80%;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      flex-wrap: wrap;
+      @include m.media(lg) {
+        background: rgba(39, 38, 44, 0.4);
+        border-radius: v.$radius-default;
+        width: 60%;
+      }
+
+      > span {
+        line-height: 1.5;
+        font-size: v.$text-sm;
+        margin-right: 4px;
+        color: c.$textDisabled;
+        font-weight: 400;
+        &:nth-child(1) {
+          color: c.$warning;
+          font-weight: v.$font-bold;
+          text-transform: uppercase;
+        }
+        &:nth-child(3) {
+          color: c.$white;
+          font-weight: v.$font-bold;
+        }
+      }
+    }
+  }
+
+  > button.banner-warning-close-btn {
+    width: 48px;
+    height: 100%;
+    border: v.$border-0;
+    background-color: transparent;
+    opacity: 1;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease 0s;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+// WARNING BANNER END
