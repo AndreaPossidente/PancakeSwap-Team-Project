@@ -1,4 +1,4 @@
-#card {
+.card-small {
   width: 100px;
   height: 100px;
   padding: 1rem;
@@ -7,26 +7,26 @@
   display: flex;
   flex-flow: column;
 }
-#card #card-banner {
+.card-small .card-icon {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   flex-grow: 1;
 }
-#card #card-banner svg {
+.card-small .card-icon svg {
   width: 1.5rem;
   fill: #7545d9;
 }
-#card h3 {
+.card-small h3 {
   color: #280460;
   margin: 0;
   padding: 0;
   font-weight: bold;
 }
-#card h3 div {
+.card-small h3 div {
   color: #7545d9;
 }
-#card p {
+.card-small p {
   margin: 0;
   margin-top: 0.5rem;
   padding: 0;

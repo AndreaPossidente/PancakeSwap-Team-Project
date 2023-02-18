@@ -1,5 +1,5 @@
 
-#card{
+.card-small{
     width: 100px;
     height: 100px;
     padding: 1rem;
@@ -7,7 +7,7 @@
     background-color: white;
     display: flex;
     flex-flow: column;
-    #card-banner{
+    .card-icon{
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
