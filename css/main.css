@@ -271,5 +271,132 @@ body {
 }
 
 /*--typography--end--*/
+/*--color--start--*/
+.color-title {
+  text-decoration: underline;
+  font-weight: 500;
+  font-family: Kanit, sans-serif;
+}
+
+.colors-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.color-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-first-row {
+  margin-bottom: 15px;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.color1 {
+  background-color: #1fc7d4;
+}
+
+.color2 {
+  background-color: #7645d9;
+}
+
+.color3 {
+  background-color: #ed4b9e;
+}
+
+.color4 {
+  background-color: #ffb237;
+}
+
+.color5 {
+  background: linear-gradient(180deg, #a7e8f1, #94e1f2);
+}
+
+.color6 {
+  background: linear-gradient(180deg, #e2c9fb, #cdb8fa);
+}
+
+.color7 {
+  background: linear-gradient(180deg, #cbd7ef, #9a9fd0);
+}
+
+.color8 {
+  background: linear-gradient(180deg, #ffd800, #fdab32);
+}
+
+.color9 {
+  background: linear-gradient(139.73deg, #e5fdff, #f3efff);
+}
+
+.color10 {
+  background: linear-gradient(139.73deg, #f3efff, #e5fdff);
+}
+
+.color11 {
+  background: linear-gradient(111.68deg, #f2ecf2, #e8f2f6);
+}
+
+.color12 {
+  background: linear-gradient(#53dee9, #7645d9);
+}
+
+.color1,
+.color2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-inside-box {
+  width: 25px;
+  height: 25px;
+}
+
+.color1 div:first-child {
+  background-color: #e5fdff;
+}
+
+.color1 div:nth-child(2) {
+  background-color: #94e1f2;
+}
+
+.color1 div:nth-child(3) {
+  background-color: #53dee9;
+}
+
+.color1 div:nth-child(4) {
+  background-color: #0098a1;
+}
+
+.color2 div:first-child {
+  background-color: #d7caec;
+}
+
+.color2 div:nth-child(2) {
+  background-color: #7a6eaa;
+}
+
+.color2 div:nth-child(3) {
+  background: rgba(90, 44, 180, 0.5019607843);
+}
+
+.color2 div:nth-child(4) {
+  background-color: #280d5f;
+}
 
 /*# sourceMappingURL=main.css.map */
