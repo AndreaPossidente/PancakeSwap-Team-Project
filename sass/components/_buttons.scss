@@ -1,0 +1,28 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+
+.button-thin{
+    color: c.$invertedContrast-dark;
+    border-radius: 16px;
+    border: v.$border-0 c.$primary;
+    height: 32px;
+    padding: 0px 24px;
+    font-weight: v.$font-bold;
+    opacity: 1;
+    cursor: pointer;
+        &:hover{
+            transition: opacity 1s ease 0s;
+            opacity: 0.70;
+        }
+}
+
+
+
+.darkblue{
+    background-color: c.$primary;
+
+}
+
+
