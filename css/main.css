@@ -87,6 +87,9 @@ body:has(#design-system) {
 #design-system > div > section > div {
   margin: 30px 15px 15px 15px;
 }
+#design-system > div > section .card-small {
+  scale: 0.5;
+}
 
 body {
   background-color: black !important;
