@@ -124,6 +124,42 @@ body:has(#design-system) {
   color: #7b6dab;
 }
 
+.card-gold {
+  color: #280d5f;
+  width: 220px;
+  height: 280px;
+  background: linear-gradient(180deg, #fdab32, #ffd800);
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  box-shadow: 0 4px #f0b90b;
+  font-size: 0.8rem;
+}
+.card-gold .card-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.card-gold .card-icon svg {
+  width: 1.5rem;
+}
+.card-gold p {
+  display: inline-block;
+  margin: 0;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+.card-gold div div {
+  font-size: 2rem;
+}
+.card-gold div p:nth-child(4) {
+  margin-top: 1rem;
+  font-weight: 100;
+}
+
 .banner-warning {
   width: 100%;
   position: relative;
