@@ -10,7 +10,7 @@
   box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
   cursor: pointer;
   display: inline-flex;
-  gap: 8px;
+  gap: 3px;
   font-family: inherit;
   font-size: 16px;
   font-weight: 600;
@@ -29,6 +29,15 @@
   border-radius: 8px;
   background-color: c.$primary;
   color: c.$invertedContrast;
+
+  &:hover {
+    opacity: 0.65;
+  }
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
   @media screen and (min-width: 576px) {
     border-radius: 16px;
   }
