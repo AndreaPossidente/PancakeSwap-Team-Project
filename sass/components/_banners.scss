@@ -76,12 +76,14 @@
     height: 100%;
     border: v.$border-0;
     background-color: transparent;
-    opacity: 1;
     flex-shrink: 0;
-    transition: opacity 0.2s ease 0s;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.75;
+    > svg {
+      opacity: 1;
+      transition: opacity 0.2s ease 0s;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.75;
+      }
     }
   }
 }
@@ -89,7 +91,8 @@
 
 // HOME SLIDER START
 #swiper {
-  min-width: 1152px;
+  max-width: 1112px;
+  width: 100%;
   height: 192px;
   margin: 0 auto;
   padding-left: 24px;
@@ -144,10 +147,19 @@
 
           &:nth-child(2) {
             position: absolute;
-            width: 193px;
+            width: 127px;
+            right: -24px;
+            bottom: -14px;
+            height: auto;
             height: initial;
             overflow: hidden;
             opacity: 1;
+
+            @media screen and (min-width: 576px) {
+              right: -24px;
+              bottom: -14px;
+              width: 193px;
+            }
             @media screen and (min-width: 968px) {
               right: 55px;
               bottom: -20px;
@@ -162,16 +174,25 @@
         height: 100%;
         top: 0px;
         left: 0px;
+        translate: auto -18px;
         overflow: visible;
         > img {
-          width: 100%;
+          width: 85%;
+          height: auto;
           overflow: hidden;
           opacity: 1;
           position: absolute;
 
+          right: 0;
+          bottom: -5px;
+          @media screen and (min-width: 576px) {
+            right: 0px;
+            bottom: -8px;
+          }
+
           @media screen and (min-width: 968px) {
             right: 0px;
-            bottom: -21px;
+            bottom: -18px;
           }
         }
       }
@@ -184,14 +205,31 @@
         right: 0px;
         overflow: visible;
         > img {
-          width: 392px;
           overflow: hidden;
           opacity: 1;
           position: absolute;
+          display: none;
+
+          width: 392px;
+          right: 0px;
+          bottom: 0px;
 
           @media screen and (min-width: 968px) {
+            height: auto;
             right: 0px;
             bottom: 0px;
+            display: block;
+          }
+
+          &:last-of-type {
+            display: block;
+            top: -28px;
+
+            width: 208px;
+            height: 208px;
+            @media screen and (min-width: 968px) {
+              display: none;
+            }
           }
         }
       }
@@ -222,7 +260,7 @@
 
           @media screen and (min-width: 576px) {
             font-size: 24px;
-            margin-top: 0px;
+            margin-top: -4.5px;
           }
         }
         .swiper-slide-title {
@@ -244,6 +282,7 @@
           }
 
           @media screen and (min-width: 852px) {
+            margin-top: 10px;
             font-size: 40px;
             padding-right: 0px;
             margin-bottom: 24px;
@@ -255,6 +294,48 @@
           gap: 8px;
           button.p-24 {
             padding: 0px 24px;
+          }
+        }
+      }
+    }
+    &:first-child {
+      .swiper-slide-wrapper {
+        .swiper-slide-content {
+          .swiper-slide-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            @media screen and (min-width: 576px) {
+              flex-wrap: nowrap;
+            }
+            > a > button.p-24 {
+              padding: 0px 24px;
+            }
+            > a > button {
+              height: 32px;
+
+              border-radius: 8px;
+              @media screen and (min-width: 576px) {
+                border-radius: 16px;
+                height: 48px;
+              }
+
+              .btn-text {
+                display: none;
+              }
+              .btn-text-mobile {
+                display: block;
+              }
+
+              @media screen and (min-width: 576px) {
+                .btn-text {
+                  display: block;
+                }
+                .btn-text-mobile {
+                  display: none;
+                }
+              }
+            }
           }
         }
       }
@@ -278,7 +359,7 @@
     -webkit-box-pack: center;
     justify-content: center;
     width: 108px;
-    bottom: 12px;
+    bottom: 15.5px;
     .swiper-pagination-bullet {
       opacity: 0.2;
       background-color: white;
