@@ -46,13 +46,31 @@
   padding: 0px;
 }
 
+main {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7a6eaa;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #eeeaf4;
+  border-radius: 10px;
+}
+
 .container {
   margin: 0px;
   width: 100%;
   min-height: auto;
   max-width: 1200px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -73,6 +91,40 @@
     padding-top: 48px;
     padding-bottom: 48px;
   }
+}
+
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex.justify-flex-start {
+  justify-content: flex-start;
+}
+.flex.justify-flex-end {
+  justify-content: flex-end;
+}
+.flex.justify-center {
+  justify-content: center;
+}
+.flex.align-flex-start {
+  align-items: flex-start;
+}
+.flex.align-flex-end {
+  align-items: flex-end;
+}
+.flex.align-center {
+  align-items: center;
 }
 
 body {
@@ -362,7 +414,7 @@ body:has(#design-system) {
   max-width: 1112px;
   width: 100%;
   height: 192px;
-  margin: 0 auto;
+  margin: 0px auto;
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 48px;
@@ -872,63 +924,33 @@ body {
   max-height: 48px;
 }
 .earn-section .container {
-  max-width: 1200px;
-  margin: 0px;
-  width: 100%;
   max-width: 968px;
-  min-height: auto;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
-@media screen and (min-width: 370px) {
-  .earn-section .container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .earn-section .container {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-}
-@media screen and (min-width: 968px) {
-  .earn-section .container {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-}
-.earn-section .container .earn-flex {
-  display: flex;
-  flex-direction: column;
-}
-.earn-section .container .earn-flex .earn-grid {
+.earn-section .container .earn-grid {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-  -webkit-box-pack: center;
   justify-content: center;
 }
 @media screen and (min-width: 852px) {
-  .earn-section .container .earn-flex .earn-grid {
+  .earn-section .container .earn-grid {
     flex-direction: row-reverse;
-    -webkit-box-align: center;
     align-items: center;
   }
 }
-.earn-section .container .earn-flex .earn-grid .earn-content {
+.earn-section .container .earn-grid .earn-content {
   display: flex;
   flex-direction: column;
   flex: 1 1 0%;
   align-self: flex-start;
 }
 @media screen and (min-width: 852px) {
-  .earn-section .container .earn-flex .earn-grid .earn-content {
+  .earn-section .container .earn-grid .earn-content {
     margin-left: 64px;
     align-self: center;
   }
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-title {
+.earn-section .container .earn-grid .earn-content .earn-content-title {
   color: #280d5f;
   font-size: 32px;
   font-weight: 600;
@@ -936,29 +958,29 @@ body {
   margin-bottom: 24px;
 }
 @media screen and (min-width: 968px) {
-  .earn-section .container .earn-flex .earn-grid .earn-content .earn-content-title {
+  .earn-section .container .earn-grid .earn-content .earn-content-title {
     font-size: 40px;
   }
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-title span {
+.earn-section .container .earn-grid .earn-content .earn-content-title span {
   color: #7645d9;
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-subtitle {
+.earn-section .container .earn-grid .earn-content .earn-content-subtitle {
   color: #7a6eaa;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 24px;
   font-size: 16px;
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-buttons {
+.earn-section .container .earn-grid .earn-content .earn-content-buttons {
   display: flex;
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-buttons button {
+.earn-section .container .earn-grid .earn-content .earn-content-buttons button {
   padding: 0px 24px;
   margin-right: 16px;
   cursor: pointer;
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-buttons a {
+.earn-section .container .earn-grid .earn-content .earn-content-buttons a {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -970,57 +992,57 @@ body {
   z-index: 1;
   cursor: pointer;
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-buttons a:hover {
+.earn-section .container .earn-grid .earn-content .earn-content-buttons a:hover {
   text-decoration: underline;
 }
-.earn-section .container .earn-flex .earn-grid .earn-content .earn-content-buttons a svg {
+.earn-section .container .earn-grid .earn-content .earn-content-buttons a svg {
   fill: #1fc7d4;
   align-self: center;
   flex-shrink: 0;
   margin-left: 4px;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images {
+.earn-section .container .earn-grid .earn-images {
   display: flex;
   height: 192px;
   width: 192px;
   margin-bottom: 24px;
 }
 @media screen and (min-width: 852px) {
-  .earn-section .container .earn-flex .earn-grid .earn-images {
+  .earn-section .container .earn-grid .earn-images {
     flex: 1 1 0%;
     height: 100%;
     width: 100%;
     margin-bottom: 0px;
   }
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content {
+.earn-section .container .earn-grid .earn-images .earn-images-content {
   position: relative;
   max-height: 512px;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content > img {
+.earn-section .container .earn-grid .earn-images .earn-images-content > img {
   height: auto;
   max-width: 100%;
   max-height: 512px;
   visibility: hidden;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content div {
+.earn-section .container .earn-grid .earn-images .earn-images-content div {
   height: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content div img {
+.earn-section .container .earn-grid .earn-images .earn-images-content div img {
   max-height: 100%;
   width: auto;
   max-width: 100%;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content .earn-image-1 {
+.earn-section .container .earn-grid .earn-images .earn-images-content .earn-image-1 {
   animation: 3s ease-in-out 1s infinite normal none running anim-float-1;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content .earn-image-2 {
+.earn-section .container .earn-grid .earn-images .earn-images-content .earn-image-2 {
   animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
 }
-.earn-section .container .earn-flex .earn-grid .earn-images .earn-images-content .earn-image-3 {
+.earn-section .container .earn-grid .earn-images .earn-images-content .earn-image-3 {
   animation: 3s ease-in-out 0.33s infinite normal none running anim-float-3;
 }
 .earn-section .container .earn-tops {
@@ -1165,63 +1187,33 @@ body {
   padding: 48px 0px;
 }
 .cake-section .container {
-  max-width: 1200px;
-  margin: 0px;
-  width: 100%;
   max-width: 968px;
-  min-height: auto;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
-@media screen and (min-width: 370px) {
-  .cake-section .container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .cake-section .container {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-}
-@media screen and (min-width: 968px) {
-  .cake-section .container {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-}
-.cake-section .container .cake-flex {
-  display: flex;
-  flex-direction: column;
-}
-.cake-section .container .cake-flex .cake-grid {
+.cake-section .container .cake-grid {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-  -webkit-box-pack: center;
   justify-content: center;
 }
 @media screen and (min-width: 852px) {
-  .cake-section .container .cake-flex .cake-grid {
+  .cake-section .container .cake-grid {
     flex-direction: row;
-    -webkit-box-align: center;
     align-items: center;
   }
 }
-.cake-section .container .cake-flex .cake-grid .cake-content {
+.cake-section .container .cake-grid .cake-content {
   display: flex;
   flex-direction: column;
   flex: 1 1 0%;
   align-self: flex-start;
 }
 @media screen and (min-width: 852px) {
-  .cake-section .container .cake-flex .cake-grid .cake-content {
+  .cake-section .container .cake-grid .cake-content {
     margin-right: 64px;
     align-self: center;
   }
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-title {
+.cake-section .container .cake-grid .cake-content .cake-content-title {
   color: #280d5f;
   font-size: 32px;
   font-weight: 600;
@@ -1229,29 +1221,29 @@ body {
   margin-bottom: 24px;
 }
 @media screen and (min-width: 968px) {
-  .cake-section .container .cake-flex .cake-grid .cake-content .cake-content-title {
+  .cake-section .container .cake-grid .cake-content .cake-content-title {
     font-size: 40px;
   }
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-title span {
+.cake-section .container .cake-grid .cake-content .cake-content-title span {
   color: #7645d9;
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-subtitle {
+.cake-section .container .cake-grid .cake-content .cake-content-subtitle {
   color: #7a6eaa;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 24px;
   font-size: 16px;
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons {
+.cake-section .container .cake-grid .cake-content .cake-content-buttons {
   display: flex;
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons button {
+.cake-section .container .cake-grid .cake-content .cake-content-buttons button {
   padding: 0px 24px;
   margin-right: 16px;
   cursor: pointer;
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons a {
+.cake-section .container .cake-grid .cake-content .cake-content-buttons a {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -1263,63 +1255,63 @@ body {
   z-index: 1;
   cursor: pointer;
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons a:hover {
+.cake-section .container .cake-grid .cake-content .cake-content-buttons a:hover {
   text-decoration: underline;
 }
-.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons a svg {
+.cake-section .container .cake-grid .cake-content .cake-content-buttons a svg {
   fill: #1fc7d4;
   align-self: center;
   flex-shrink: 0;
   margin-left: 4px;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images {
+.cake-section .container .cake-grid .cake-images {
   display: flex;
   height: 192px;
   width: 192px;
   margin-bottom: 24px;
 }
 @media screen and (min-width: 852px) {
-  .cake-section .container .cake-flex .cake-grid .cake-images {
+  .cake-section .container .cake-grid .cake-images {
     flex: 1 1 0%;
     height: 100%;
     width: 100%;
     margin-bottom: 0px;
   }
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content {
+.cake-section .container .cake-grid .cake-images .cake-images-content {
   position: relative;
   max-height: 512px;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content > img {
+.cake-section .container .cake-grid .cake-images .cake-images-content > img {
   height: auto;
   max-width: 100%;
   max-height: 512px;
   visibility: hidden;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content div {
+.cake-section .container .cake-grid .cake-images .cake-images-content div {
   height: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content div img {
+.cake-section .container .cake-grid .cake-images .cake-images-content div img {
   max-height: 100%;
   width: auto;
   max-width: 100%;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-1 {
+.cake-section .container .cake-grid .cake-images .cake-images-content .cake-image-1 {
   animation: 3s ease-in-out 1s infinite normal none running anim-float-1;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-2 {
+.cake-section .container .cake-grid .cake-images .cake-images-content .cake-image-2 {
   animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-3 {
+.cake-section .container .cake-grid .cake-images .cake-images-content .cake-image-3 {
   animation: 3s ease-in-out 0.33s infinite normal none running anim-float-3;
 }
-.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-4 {
+.cake-section .container .cake-grid .cake-images .cake-images-content .cake-image-4 {
   animation: 3s ease-in-out 0s infinite normal none running anim-float-1;
 }
-.cake-section .container .cake-flex .cake-stats {
+.cake-section .container .cake-stats {
   display: grid;
   gap: 16px 8px;
   margin-top: 24px;
@@ -1327,58 +1319,58 @@ body {
   grid-template-areas: "a d" "b e" "c f";
 }
 @media screen and (min-width: 576px) {
-  .cake-section .container .cake-flex .cake-stats {
+  .cake-section .container .cake-stats {
     gap: 16px;
   }
 }
 @media screen and (min-width: 852px) {
-  .cake-section .container .cake-flex .cake-stats {
+  .cake-section .container .cake-stats {
     grid-template-areas: "a b c" "d e f";
     gap: 32px;
     grid-template-columns: repeat(3, auto);
   }
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item {
+.cake-section .container .cake-stats .cake-stats-item {
   padding: 0px 0px;
   border-left: 0px;
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 852px) {
-  .cake-section .container .cake-flex .cake-stats .cake-stats-item {
+  .cake-section .container .cake-stats .cake-stats-item {
     padding: 0px 16px;
     border-left: 1px #d7caec solid;
   }
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(1) {
+.cake-section .container .cake-stats .cake-stats-item:nth-child(1) {
   grid-area: a/a/a/a;
   padding: 0px;
   border-left: none;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(2) {
+.cake-section .container .cake-stats .cake-stats-item:nth-child(2) {
   grid-area: b/b/b/b;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(3) {
+.cake-section .container .cake-stats .cake-stats-item:nth-child(3) {
   grid-area: c/c/c/c;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(4) {
+.cake-section .container .cake-stats .cake-stats-item:nth-child(4) {
   grid-area: d/d/d/d;
   padding: 0px;
   border-left: none;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(5) {
+.cake-section .container .cake-stats .cake-stats-item:nth-child(5) {
   grid-area: e/e/e/e;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(6) {
+.cake-section .container .cake-stats .cake-stats-item:nth-child(6) {
   grid-area: f/f/f/f;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item .cake-stats-item-subtitle {
+.cake-section .container .cake-stats .cake-stats-item .cake-stats-item-subtitle {
   color: #7a6eaa;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
 }
-.cake-section .container .cake-flex .cake-stats .cake-stats-item .cake-stats-item-value {
+.cake-section .container .cake-stats .cake-stats-item .cake-stats-item-value {
   color: #280d5f;
   font-weight: 600;
   line-height: 1.1;
