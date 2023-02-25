@@ -14,6 +14,30 @@
         // content of the media query
     }
 */
+@keyframes anim-float-1 {
+  0% {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 1% 5%;
+  }
+}
+@keyframes anim-float-2 {
+  0% {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 2% 3%;
+  }
+}
+@keyframes anim-float-3 {
+  0% {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 3% 1%;
+  }
+}
 *,
 *::before,
 *::after {
@@ -1128,29 +1152,237 @@ body {
   font-size: 16px;
 }
 
-@keyframes anim-float-1 {
-  0% {
-    translate: 0% 0%;
-  }
-  50% {
-    translate: 1% 5%;
+.cake-section {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 1;
+  padding: 48px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 48px 0px;
+}
+.cake-section .container {
+  max-width: 1200px;
+  margin: 0px;
+  width: 100%;
+  max-width: 968px;
+  min-height: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media screen and (min-width: 370px) {
+  .cake-section .container {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
-@keyframes anim-float-2 {
-  0% {
-    translate: 0% 0%;
-  }
-  50% {
-    translate: 2% 3%;
+@media screen and (min-width: 576px) {
+  .cake-section .container {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
-@keyframes anim-float-3 {
-  0% {
-    translate: 0% 0%;
+@media screen and (min-width: 968px) {
+  .cake-section .container {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
-  50% {
-    translate: 3% 1%;
+}
+.cake-section .container .cake-flex {
+  display: flex;
+  flex-direction: column;
+}
+.cake-section .container .cake-flex .cake-grid {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+@media screen and (min-width: 852px) {
+  .cake-section .container .cake-flex .cake-grid {
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
   }
+}
+.cake-section .container .cake-flex .cake-grid .cake-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  align-self: flex-start;
+}
+@media screen and (min-width: 852px) {
+  .cake-section .container .cake-flex .cake-grid .cake-content {
+    margin-right: 64px;
+    align-self: center;
+  }
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-title {
+  color: #280d5f;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 968px) {
+  .cake-section .container .cake-flex .cake-grid .cake-content .cake-content-title {
+    font-size: 40px;
+  }
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-title span {
+  color: #7645d9;
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-subtitle {
+  color: #7a6eaa;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons {
+  display: flex;
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons button {
+  padding: 0px 24px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons a {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: fit-content;
+  color: #1fc7d4;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 16px;
+  z-index: 1;
+  cursor: pointer;
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons a:hover {
+  text-decoration: underline;
+}
+.cake-section .container .cake-flex .cake-grid .cake-content .cake-content-buttons a svg {
+  fill: #1fc7d4;
+  align-self: center;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images {
+  display: flex;
+  height: 192px;
+  width: 192px;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 852px) {
+  .cake-section .container .cake-flex .cake-grid .cake-images {
+    flex: 1 1 0%;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content {
+  position: relative;
+  max-height: 512px;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content > img {
+  height: auto;
+  max-width: 100%;
+  max-height: 512px;
+  visibility: hidden;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content div {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content div img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-1 {
+  animation: 3s ease-in-out 1s infinite normal none running anim-float-1;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-2 {
+  animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-3 {
+  animation: 3s ease-in-out 0.33s infinite normal none running anim-float-3;
+}
+.cake-section .container .cake-flex .cake-grid .cake-images .cake-images-content .cake-image-4 {
+  animation: 3s ease-in-out 0s infinite normal none running anim-float-1;
+}
+.cake-section .container .cake-flex .cake-stats {
+  display: grid;
+  gap: 16px 8px;
+  margin-top: 24px;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: "a d" "b e" "c f";
+}
+@media screen and (min-width: 576px) {
+  .cake-section .container .cake-flex .cake-stats {
+    gap: 16px;
+  }
+}
+@media screen and (min-width: 852px) {
+  .cake-section .container .cake-flex .cake-stats {
+    grid-template-areas: "a b c" "d e f";
+    gap: 32px;
+    grid-template-columns: repeat(3, auto);
+  }
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item {
+  padding: 0px 0px;
+  border-left: 0px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 852px) {
+  .cake-section .container .cake-flex .cake-stats .cake-stats-item {
+    padding: 0px 16px;
+    border-left: 1px #d7caec solid;
+  }
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(1) {
+  grid-area: a/a/a/a;
+  padding: 0px;
+  border-left: none;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(2) {
+  grid-area: b/b/b/b;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(3) {
+  grid-area: c/c/c/c;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(4) {
+  grid-area: d/d/d/d;
+  padding: 0px;
+  border-left: none;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(5) {
+  grid-area: e/e/e/e;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item:nth-child(6) {
+  grid-area: f/f/f/f;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item .cake-stats-item-subtitle {
+  color: #7a6eaa;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.cake-section .container .cake-flex .cake-stats .cake-stats-item .cake-stats-item-value {
+  color: #280d5f;
+  font-weight: 600;
+  line-height: 1.1;
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */

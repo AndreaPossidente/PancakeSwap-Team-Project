@@ -1,4 +1,4 @@
-import increaseNum from "../utils/increaseNum.js";
+import { increaseNum } from "../utils/increaseNum.js";
 
 const earnTops = document.querySelectorAll(".earn-tops-list-item-content");
 const earnTopsTitle = document.querySelector(".earn-tops-header > h2 > span");
