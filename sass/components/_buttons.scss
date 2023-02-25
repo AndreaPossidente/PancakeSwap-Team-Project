@@ -2,27 +2,81 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 
+@mixin base-style{
+    border: v.$border-0 c.$primary;
+    border-radius: v.$radius-default;
+    color: c.$invertedContrast-dark;
+    font-weight: v.$font-bold;
+    font-size: v.$text-default;
+}
 
 .button-thin{
-    color: c.$invertedContrast-dark;
-    border-radius: 16px;
-    border: v.$border-0 c.$primary;
-    height: 32px;
-    padding: 0px 24px;
-    font-weight: v.$font-bold;
+    @include base-style;
+    height: v.$b-height-0;
+    padding: v.$btn-padding;
     opacity: 1;
     cursor: pointer;
         &:hover{
             transition: opacity 1s ease 0s;
-            opacity: 0.70;
+            opacity: 0.60;
         }
 }
 
+.button-container{
+    width: 100%;
+    height: 100%;
+    margin: 6px !important;
+}
 
+
+.button-square-arrow{
+    @include base-style;
+    height: v.$b-height-1;
+    width: v.$b-width-1;
+
+}
+
+.arrow-up-btn{
+    height: v.$b-height-2;
+    width: v.$b-width-2;
+}
+
+//fat button
+.button-fat{
+    @include base-style;
+    height: v.$b-height-3;
+    padding: v.$btn-padding-1;
+}
+
+.button-medium{
+    @include base-style;
+    height: v.$b-height-3;
+    padding: v.$btn-padding;
+}
+
+.button-medium-transparent{
+    border: v.$border-2 solid c.$primary;
+    border-radius: v.$radius-default;
+    color: c.$primary;
+    font-weight: v.$font-bold;
+    height: v.$b-height-3;
+    padding: v.$btn-padding;
+    font-weight: v.$font-bold;
+    font-size: v.$text-default;
+}
+
+.button-slide-daynight-base{
+    height: v.$b-height-0;
+    width: v.$b-width-3;
+    border-radius: v.$radius-card;
+}
+
+.lightblue{
+    background-color: c.$primaryBright;
+}
 
 .darkblue{
     background-color: c.$primary;
-
 }
 
 
