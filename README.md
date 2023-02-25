@@ -1,3 +1,9 @@
+# PancakeSwap Team Project
+
+Puoi vedere un anteprima del sito web visitando il seguente link:
+
+#### [Vedi Anteprima](https://andreapossidente.github.io/PancakeSwap-Team-Project/)
+
 # Worfklow
 ## SCRUM
 1. Ad ogni inizio sprint (uno sprint ha una durata di una settimana), assegnamo i ticket dal backlog.
