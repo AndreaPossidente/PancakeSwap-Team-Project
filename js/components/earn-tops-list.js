@@ -1,3 +1,5 @@
+import increaseNum from "../utils/increaseNum.js";
+
 const earnTops = document.querySelectorAll(".earn-tops-list-item-content");
 const earnTopsTitle = document.querySelector(".earn-tops-header > h2 > span");
 const earnTopsButton = document.querySelector(".earn-tops-header .btn");
@@ -15,3 +17,7 @@ function switchEarnTopsList() {
 
 setInterval(() => switchEarnTopsList(), 6000);
 earnTopsButton.addEventListener("click", (e) => switchEarnTopsList());
+
+const rates = document.querySelectorAll(".earn-tops-list-item-rate > span");
+
+increaseNum(rates);
