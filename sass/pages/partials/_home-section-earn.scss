@@ -29,145 +29,122 @@
     }
   }
   .container {
-    max-width: 1200px;
-    margin: v.$space-0;
-    width: 100%;
     max-width: 968px;
-    min-height: auto;
-    padding-top: v.$space-6;
-    padding-bottom: v.$space-6;
-    @include m.media(sm) {
-      padding-left: v.$space-8;
-      padding-right: v.$space-8;
-    }
-    @include m.media(md) {
-      padding-top: v.$space-9;
-      padding-bottom: v.$space-9;
-    }
-    @include m.media(xl) {
-      padding-top: v.$space-10;
-      padding-bottom: v.$space-10;
-    }
-    .earn-flex {
+    .earn-grid {
       display: flex;
-      flex-direction: column;
-      .earn-grid {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      justify-content: center;
+      @include m.media(lg) {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      .earn-content {
         display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-end;
-        -webkit-box-pack: center;
-        justify-content: center;
+        flex-direction: column;
+        flex: 1 1 0%;
+        align-self: flex-start;
         @include m.media(lg) {
-          flex-direction: row-reverse;
-          -webkit-box-align: center;
-          align-items: center;
+          margin-left: v.$space-12;
+          align-self: center;
         }
-        .earn-content {
-          display: flex;
-          flex-direction: column;
-          flex: 1 1 0%;
-          align-self: flex-start;
-          @include m.media(lg) {
-            margin-left: v.$space-12;
-            align-self: center;
-          }
-          .earn-content-title {
-            color: c.$text;
-            font-size: 32px;
-            font-weight: v.$font-bold;
-            line-height: 1.1;
-            margin-bottom: v.$space-8;
-            @include m.media(xl) {
-              font-size: v.$text-xl;
-            }
-            span {
-              color: c.$secondary;
-            }
-          }
-          .earn-content-subtitle {
-            color: c.$textSubtle;
-            font-weight: 400;
-            line-height: 1.5;
-            margin-bottom: v.$space-8;
-            font-size: v.$text-default;
-          }
-          .earn-content-buttons {
-            display: flex;
-            button {
-              padding: v.$space-0 v.$space-8;
-              margin-right: v.$space-6;
-              cursor: pointer;
-            }
-            a {
-              display: flex;
-              -webkit-box-align: center;
-              align-items: center;
-              width: fit-content;
-              color: c.$primary;
-              font-weight: v.$font-bold;
-              line-height: 1.5;
-              font-size: v.$text-default;
-              z-index: 1;
-              cursor: pointer;
-              &:hover {
-                text-decoration: underline;
-              }
-              svg {
-                fill: c.$primary;
-                align-self: center;
-                flex-shrink: 0;
-                margin-left: v.$space-2;
-              }
-            }
-          }
-        }
-        .earn-images {
-          display: flex;
-          height: 192px;
-          width: 192px;
+        .earn-content-title {
+          color: c.$text;
+          font-size: 32px;
+          font-weight: v.$font-bold;
+          line-height: 1.1;
           margin-bottom: v.$space-8;
-          @include m.media(lg) {
-            flex: 1 1 0%;
-            height: 100%;
-            width: 100%;
-            margin-bottom: v.$space-0;
+          @include m.media(xl) {
+            font-size: v.$text-xl;
           }
-          .earn-images-content {
-            position: relative;
-            max-height: 512px;
-            > img {
-              height: auto;
-              max-width: 100%;
-              max-height: 512px;
-              visibility: hidden;
+          span {
+            color: c.$secondary;
+          }
+        }
+        .earn-content-subtitle {
+          color: c.$textSubtle;
+          font-weight: 400;
+          line-height: 1.5;
+          margin-bottom: v.$space-8;
+          font-size: v.$text-default;
+        }
+        .earn-content-buttons {
+          display: flex;
+          button {
+            padding: v.$space-0 v.$space-8;
+            margin-right: v.$space-6;
+            cursor: pointer;
+          }
+          a {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            width: fit-content;
+            color: c.$primary;
+            font-weight: v.$font-bold;
+            line-height: 1.5;
+            font-size: v.$text-default;
+            z-index: 1;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
             }
-            div {
-              height: 100%;
-              position: absolute;
-              top: 0px;
-              left: 0px;
-              img {
-                max-height: 100%;
-                width: auto;
-                max-width: 100%;
-              }
-            }
-            .earn-image-1 {
-              animation: 3s ease-in-out 1s infinite normal none running
-                anim-float-1;
-            }
-            .earn-image-2 {
-              animation: 3s ease-in-out 0.66s infinite normal none running
-                anim-float-2;
-            }
-            .earn-image-3 {
-              animation: 3s ease-in-out 0.33s infinite normal none running
-                anim-float-3;
+            svg {
+              fill: c.$primary;
+              align-self: center;
+              flex-shrink: 0;
+              margin-left: v.$space-2;
             }
           }
         }
       }
+      .earn-images {
+        display: flex;
+        height: 192px;
+        width: 192px;
+        margin-bottom: v.$space-8;
+        @include m.media(lg) {
+          flex: 1 1 0%;
+          height: 100%;
+          width: 100%;
+          margin-bottom: v.$space-0;
+        }
+        .earn-images-content {
+          position: relative;
+          max-height: 512px;
+          > img {
+            height: auto;
+            max-width: 100%;
+            max-height: 512px;
+            visibility: hidden;
+          }
+          div {
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            img {
+              max-height: 100%;
+              width: auto;
+              max-width: 100%;
+            }
+          }
+          .earn-image-1 {
+            animation: 3s ease-in-out 1s infinite normal none running
+              anim-float-1;
+          }
+          .earn-image-2 {
+            animation: 3s ease-in-out 0.66s infinite normal none running
+              anim-float-2;
+          }
+          .earn-image-3 {
+            animation: 3s ease-in-out 0.33s infinite normal none running
+              anim-float-3;
+          }
+        }
+      }
     }
+
     .earn-tops {
       display: flex;
       flex-direction: column;
