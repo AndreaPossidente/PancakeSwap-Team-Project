@@ -2,19 +2,8 @@
 @use "../../abstracts/mixins" as m;
 @use "../../abstracts/variables" as v;
 
-// EARN SECTION START
 .earn-section {
   background: var(--colors-gradientCardHeader);
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  z-index: 1;
-  padding: v.$space-10 v.$space-6;
-  margin-left: auto;
-  margin-right: auto;
-  padding: v.$space-10 v.$space-0;
   .earn-background {
     position: absolute;
     top: 0;
@@ -30,7 +19,7 @@
   }
   .container {
     max-width: 968px;
-    .earn-grid {
+    .earn-inner-container {
       display: flex;
       flex-direction: column-reverse;
       align-items: flex-end;
