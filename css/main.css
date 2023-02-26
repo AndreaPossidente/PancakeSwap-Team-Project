@@ -252,19 +252,28 @@ body:has(#design-system) {
 }
 
 .card-small {
-  width: 300px;
-  height: 300px;
+  position: relative;
+  width: 280px;
+  height: 280px;
   padding: 1rem;
   border-radius: 2rem;
   background-color: white;
   display: flex;
   flex-flow: column;
-  box-shadow: 0px 4px rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 4px #e7e3eb;
 }
 .card-small .card-icon {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  display: inline;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+@media screen and (min-width: 852px) {
+  .card-small .card-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
 }
 .card-small .card-icon svg {
   width: 2.5rem;
@@ -275,25 +284,34 @@ body:has(#design-system) {
   margin: 0;
   padding: 0;
   padding-bottom: 1rem;
-  padding-left: 0.8rem;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 32px;
   flex-grow: 1;
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 852px) {
+  .card-small h3 {
+    justify-content: flex-end;
+    font-size: 40px;
+  }
 }
 .card-small h3 div {
   margin-top: 1rem;
-  margin-bottom: 1rem;
-  color: #7545d9;
+  color: #7645d9;
+}
+@media screen and (min-width: 852px) {
+  .card-small h3 div {
+    margin-bottom: 1rem;
+  }
 }
 .card-small p {
   margin: 0;
   margin-top: 0.5rem;
   padding: 0;
-  padding-left: 0.8rem;
   font-size: 1rem;
+  font-weight: 400;
   color: #7b6dab;
 }
 
@@ -1382,66 +1400,89 @@ body {
 }
 
 .reassurance-section {
-  background: linear-gradient(180deg, rgb(255, 255, 255), #cdb8fa);
+  background: linear-gradient(180deg, #fff 22%, #d7caec 100%);
+}
+.reassurance-section .container {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
-.reassurance-section .reassurance-description {
-  max-width: 80%;
-  color: #280d5f;
+.reassurance-section .container .reassurance-description {
+  max-width: 100%;
+  color: #7a6eaa;
   padding: 1rem;
   text-align: center;
 }
-@media screen and (min-width: 968px) {
-  .reassurance-section .reassurance-description {
+@media screen and (min-width: 852px) {
+  .reassurance-section .container .reassurance-description {
     max-width: 50%;
   }
 }
-.reassurance-section .reassurance-description h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.reassurance-section .container .reassurance-description h1 {
+  line-height: 1.1;
+  color: #280d5f;
+  font-size: 32px;
 }
-.reassurance-section .reassurance-description .r-description {
+@media screen and (min-width: 852px) {
+  .reassurance-section .container .reassurance-description h1 {
+    font-size: 40px;
+  }
+}
+.reassurance-section .container .reassurance-description .r-description {
+  margin-top: 1.5rem;
   font-weight: 100;
 }
-.reassurance-section .reassurance-description .r-description div {
+.reassurance-section .container .reassurance-description .r-description div {
   margin-top: 1rem;
   font-weight: bold;
 }
-.reassurance-section .reassurance-cards {
+.reassurance-section .container .reassurance-cards {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
-.reassurance-section .reassurance-cards .card-small {
+.reassurance-section .container .reassurance-cards .card-small {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  height: 200px;
+  width: 280px;
+  height: 160px;
+  padding: 24px;
   text-align: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
-.reassurance-section .reassurance-cards .card-small:nth-child(2) svg {
+@media screen and (min-width: 852px) {
+  .reassurance-section .container .reassurance-cards .card-small {
+    width: 280px;
+    height: 280px;
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+}
+.reassurance-section .container .reassurance-cards .card-small:nth-child(2) svg {
   fill: #53dee9;
 }
-.reassurance-section .reassurance-cards .card-small:nth-child(2) h3 div {
+.reassurance-section .container .reassurance-cards .card-small:nth-child(2) h3 div {
   color: #53dee9;
 }
-.reassurance-section .reassurance-cards .card-small:nth-child(3) svg {
+.reassurance-section .container .reassurance-cards .card-small:nth-child(3) svg {
   fill: #ed4b9e;
 }
-.reassurance-section .reassurance-cards .card-small:nth-child(3) h3 div {
+.reassurance-section .container .reassurance-cards .card-small:nth-child(3) h3 div {
   color: #ed4b9e;
 }
-@media screen and (min-width: 968px) {
-  .reassurance-section .reassurance-cards {
+@media screen and (min-width: 852px) {
+  .reassurance-section .container .reassurance-cards {
     width: 100%;
     flex-flow: row;
     justify-content: center;
-  }
-  .reassurance-section .reassurance-cards .card-small {
-    height: 300px;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    /* .card-small {
+        height: 300px;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    } */
   }
 }
 .reassurance-section .reassurance-background {
@@ -1452,7 +1493,7 @@ body {
 .reassurance-section .reassurance-background svg {
   width: 100%;
   min-height: 48px;
-  fill: rgba(205, 184, 250, 0.9);
+  fill: rgba(215, 202, 236, 0.9);
 }
 
 /*# sourceMappingURL=main.css.map */
