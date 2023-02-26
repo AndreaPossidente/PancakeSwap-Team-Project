@@ -8,58 +8,57 @@ body {
   font-weight: v.$font-bold;
 }
 
-
 /*--typography--start--*/
-.typo-title{
+.typo-title {
   text-decoration: underline;
   font-weight: v.$font-normal;
   font-family: v.$font-kanit;
 }
-.typography-conainer{
+.typography-conainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.typo-48px{
+.typo-48px {
   font-size: v.$space-10;
 }
-.typo-32px{
+.typo-32px {
   font-size: v.$space-9;
 }
-.typo-24px{
+.typo-24px {
   font-size: v.$space-8;
 }
-.typo-20px{
+.typo-20px {
   font-size: v.$space-7;
 }
-.typo-16px{
+.typo-16px {
   font-size: v.$space-6;
 }
 
-.typo-bold{
+.typo-bold {
   font-weight: v.$font-bold;
 }
-.typo-regular{
+.typo-regular {
   font-weight: v.$font-normal;
 }
-.typo-h2{
-  color: c.$text;
+.typo-h2 {
+  color: var(--colors-text);
 }
 .typo-span,
-.typo-h2 p:first-of-type{
-  color: c.$secondary;
+.typo-h2 p:first-of-type {
+  color: var(--colors-secondary);
 }
 
 .typo-body p:nth-child(1),
-.typo-body p:nth-child(2){
-  color: c.$textSubtle;
+.typo-body p:nth-child(2) {
+  color: var(--colors-textSubtle);
 }
-.typo-body p:last-child{
-  color: c.$inputSecondary ;
+.typo-body p:last-child {
+  color: var(--colors-inputSecondary);
 }
 
-.typo-button p{
-  color: c.$white;
+.typo-button p {
+  color: var(--colors-white);
 }
 
 /*--typography--end--*/
@@ -101,51 +100,51 @@ body {
 }
 
 .color1 {
-  background-color: c.$primary;
+  background-color: var(--colors-primary);
 }
 
 .color2 {
-  background-color: c.$secondary;
+  background-color: var(--colors-secondary);
 }
 
 .color3 {
-  background-color: c.$failure;
+  background-color: var(--colors-failure);
 }
 
 .color4 {
-  background-color: c.$warning;
+  background-color: var(--colors-warning);
 }
 
 .color5 {
-  background: c.$gradientBlue;
+  background: var(--colors-gradientBlue);
 }
 
 .color6 {
-  background: c.$gradientViolet;
+  background: var(--colors-gradientViolet);
 }
 
 .color7 {
-  background: c.$gradientVioletAlt;
+  background: var(--colors-gradientVioletAlt);
 }
 
 .color8 {
-  background: c.$gradientGold;
+  background: var(--colors-gradientGold);
 }
 
 .color9 {
-  background: c.$gradientBubblegum;
+  background: var(--colors-gradientBubblegum);
 }
 
 .color10 {
-  background: c.$gradientInverseBubblegum;
+  background: var(--colors-gradientInverseBubblegum);
 }
 
 .color11 {
-  background: c.$gradientCardHeader;
+  background: var(--colors-gradientCardHeader);
 }
 
 .color12 {
-  background: c.$gradientBold;
+  background: var(--colors-gradientBold);
 }
 
 .color1,
@@ -169,19 +168,19 @@ body {
 }
 
 .color1 div:nth-child(3) {
-  background-color: c.$primaryBright;
+  background-color: var(--colors-primaryBright);
 }
 
 .color1 div:nth-child(4) {
-  background-color: c.$primaryDark;
+  background-color: var(--colors-primaryDark);
 }
 
 .color2 div:first-child {
-  background-color: c.$inputSecondary;
+  background-color: var(--colors-inputSecondary);
 }
 
 .color2 div:nth-child(2) {
-  background-color: c.$textSubtle;
+  background-color: var(--colors-textSubtle);
 }
 
 .color2 div:nth-child(3) {
@@ -189,5 +188,5 @@ body {
 }
 
 .color2 div:nth-child(4) {
-  background-color: c.$text;
+  background-color: var(--colors-text);
 }

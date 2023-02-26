@@ -3,7 +3,7 @@
 @use "../abstracts/mixins" as m;
 
 body:has(#design-system) {
-  background: c.$gradientBold;
+  background: var(--colors-gradientBold);
   min-height: 100vh;
   padding: 30px;
 }
@@ -18,7 +18,6 @@ body:has(#design-system) {
     flex-direction: row;
   }
 
-
   > div {
     flex: 1;
     &:last-child {
@@ -30,7 +29,7 @@ body:has(#design-system) {
     flex-direction: column;
     > section {
       padding: 10px;
-      background: c.$white;
+      background: var(--colors-white);
       background-color: #ffffffbf;
       backdrop-filter: blur(10px);
       box-shadow: 4px 4px 10px #00000033;
@@ -43,7 +42,7 @@ body:has(#design-system) {
       > div {
         margin: 30px 15px 15px 15px;
       }
-      .card-small{
+      .card-small {
         scale: 0.5;
       }
     }
