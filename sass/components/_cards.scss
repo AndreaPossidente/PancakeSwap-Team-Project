@@ -1,12 +1,15 @@
 @use "../abstracts/colors" as c;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 .card-small{
     width: 300px;
     height: 300px;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
     background-color: white;
     display: flex;
     flex-flow: column;
+    box-shadow: 0px 4px rgba(255, 255, 255, 0.6);
     .card-icon{
         display: flex;
         justify-content: flex-end;
@@ -20,6 +23,8 @@
         color: #280460;
         margin: 0;
         padding: 0;
+        padding-bottom: 1rem;
+        padding-left: 0.8rem;
         font-weight: bold;
         font-size: 3rem;
         flex-grow: 1;
@@ -36,6 +41,7 @@
         margin: 0;
         margin-top: 0.5rem;
         padding: 0;
+        padding-left: 0.8rem;
         font-size: 1rem;
         color: #7b6dab;
     }
