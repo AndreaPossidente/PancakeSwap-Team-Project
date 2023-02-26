@@ -3,20 +3,9 @@
 @use "../../abstracts/variables" as v;
 
 .cake-section {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  z-index: 1;
-  padding: v.$space-10 v.$space-6;
-  margin-left: auto;
-  margin-right: auto;
-  padding: v.$space-10 v.$space-0;
   .container {
     max-width: 968px;
-
-    .cake-grid {
+    .cake-inner-container {
       display: flex;
       flex-direction: column-reverse;
       align-items: flex-end;
@@ -35,7 +24,7 @@
           align-self: center;
         }
         .cake-content-title {
-          color: c.$text;
+          color: var(--colors-text);
           font-size: 32px;
           font-weight: v.$font-bold;
           line-height: 1.1;
@@ -44,11 +33,11 @@
             font-size: v.$text-xl;
           }
           span {
-            color: c.$secondary;
+            color: var(--colors-secondary);
           }
         }
         .cake-content-subtitle {
-          color: c.$textSubtle;
+          color: var(--colors-textSubtle);
           font-weight: 400;
           line-height: 1.5;
           margin-bottom: v.$space-8;
@@ -66,7 +55,7 @@
             -webkit-box-align: center;
             align-items: center;
             width: fit-content;
-            color: c.$primary;
+            color: var(--colors-primary);
             font-weight: v.$font-bold;
             line-height: 1.5;
             font-size: v.$text-default;
@@ -76,7 +65,7 @@
               text-decoration: underline;
             }
             svg {
-              fill: c.$primary;
+              fill: var(--colors-primary);
               align-self: center;
               flex-shrink: 0;
               margin-left: v.$space-2;
@@ -160,7 +149,7 @@
         flex-direction: column;
         @include m.media(lg) {
           padding: v.$space-0 v.$space-6;
-          border-left: 1px c.$inputSecondary solid;
+          border-left: 1px var(--colors-inputSecondary solid);
         }
         &:nth-child(1) {
           grid-area: a / a / a / a;
@@ -185,13 +174,13 @@
           grid-area: f / f / f / f;
         }
         .cake-stats-item-subtitle {
-          color: c.$textSubtle;
+          color: var(--colors-textSubtle);
           font-weight: 400;
           line-height: 1.5;
           font-size: v.$text-default;
         }
         .cake-stats-item-value {
-          color: c.$text;
+          color: var(--colors-text);
           font-weight: v.$font-bold;
           line-height: 1.1;
           font-size: 24px;

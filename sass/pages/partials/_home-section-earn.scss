@@ -2,19 +2,8 @@
 @use "../../abstracts/mixins" as m;
 @use "../../abstracts/variables" as v;
 
-// EARN SECTION START
 .earn-section {
-  background: c.$gradientCardHeader;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  z-index: 1;
-  padding: v.$space-10 v.$space-6;
-  margin-left: auto;
-  margin-right: auto;
-  padding: v.$space-10 v.$space-0;
+  background: var(--colors-gradientCardHeader);
   .earn-background {
     position: absolute;
     top: 0;
@@ -22,7 +11,7 @@
     width: 100%;
     height: 100%;
     > svg {
-      fill: c.$background;
+      fill: var(--colors-background);
       width: 150%;
       height: 100%;
       max-height: 48px;
@@ -30,7 +19,7 @@
   }
   .container {
     max-width: 968px;
-    .earn-grid {
+    .earn-inner-container {
       display: flex;
       flex-direction: column-reverse;
       align-items: flex-end;
@@ -49,7 +38,7 @@
           align-self: center;
         }
         .earn-content-title {
-          color: c.$text;
+          color: var(--colors-text);
           font-size: 32px;
           font-weight: v.$font-bold;
           line-height: 1.1;
@@ -58,11 +47,11 @@
             font-size: v.$text-xl;
           }
           span {
-            color: c.$secondary;
+            color: var(--colors-secondary);
           }
         }
         .earn-content-subtitle {
-          color: c.$textSubtle;
+          color: var(--colors-textSubtle);
           font-weight: 400;
           line-height: 1.5;
           margin-bottom: v.$space-8;
@@ -80,7 +69,7 @@
             -webkit-box-align: center;
             align-items: center;
             width: fit-content;
-            color: c.$primary;
+            color: var(--colors-primary);
             font-weight: v.$font-bold;
             line-height: 1.5;
             font-size: v.$text-default;
@@ -90,7 +79,7 @@
               text-decoration: underline;
             }
             svg {
-              fill: c.$primary;
+              fill: var(--colors-primary);
               align-self: center;
               flex-shrink: 0;
               margin-left: v.$space-2;
@@ -156,9 +145,9 @@
           font-size: v.$text-lg;
           font-weight: v.$font-bold;
           line-height: 1.1;
-          color: c.$text;
+          color: var(--colors-text);
           span {
-            color: c.$secondary;
+            color: var(--colors-secondary);
           }
         }
         button {
@@ -181,7 +170,7 @@
           transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
           padding: v.$space-0 v.$space-8;
           background-color: transparent;
-          color: c.$primary;
+          color: var(--colors-primary);
           box-shadow: none;
           height: 100%;
           width: auto;
@@ -197,7 +186,7 @@
           }
           svg {
             align-self: center;
-            fill: c.$textSubtle;
+            fill: var(--colors-textSubtle);
             flex-shrink: 0;
           }
         }
@@ -228,7 +217,7 @@
             &:not(:first-child) {
               @include m.media(md) {
                 .earn-tops-list-item-content {
-                  border-left: v.$border-1 solid c.$inputSecondary;
+                  border-left: v.$border-1 solid var(--colors-inputSecondary);
                   padding-left: v.$space-6;
                 }
               }
@@ -248,20 +237,20 @@
                 margin-top: 50%;
               }
               .earn-tops-list-item-title {
-                color: c.$secondary;
+                color: var(--colors-secondary);
                 font-weight: v.$font-bold;
                 line-height: 1.5;
                 margin-bottom: v.$space-3;
                 font-size: v.$text-xs;
               }
               .earn-tops-list-item-rate {
-                color: c.$text;
+                color: var(--colors-text);
                 font-weight: v.$font-bold;
                 line-height: 1.1;
                 font-size: v.$text-default;
               }
               .earn-tops-list-item-apr {
-                color: c.$textSubtle;
+                color: var(--colors-textSubtle);
                 font-weight: 400;
                 line-height: 1.5;
                 font-size: v.$text-default;
