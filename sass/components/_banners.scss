@@ -56,15 +56,15 @@
         line-height: 1.5;
         font-size: v.$text-sm;
         margin-right: 4px;
-        color: c.$textDisabled;
+        color: var(--colors-textDisabled);
         font-weight: 400;
         &:nth-child(1) {
-          color: c.$warning;
+          color: var(--colors-warning);
           font-weight: v.$font-bold;
           text-transform: uppercase;
         }
         &:nth-child(3) {
-          color: c.$white;
+          color: var(--colors-white);
           font-weight: v.$font-bold;
         }
       }

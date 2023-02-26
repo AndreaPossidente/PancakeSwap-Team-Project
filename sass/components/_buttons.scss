@@ -27,8 +27,8 @@
   box-shadow: rgb(0 0 0 / 10%) 0px -2px 0px inset;
   padding: 4px 8px;
   border-radius: 8px;
-  background-color: c.$primary;
-  color: c.$invertedContrast;
+  background-color: var(--colors-primary);
+  color: var(--colors-invertedContrast);
 
   &:hover {
     opacity: 0.65;
@@ -43,12 +43,12 @@
   }
 
   &-cyan {
-    background-color: c.$primary;
-    color: c.$invertedContrast;
+    background-color: var(--colors-primary);
+    color: var(--colors-invertedContrast);
   }
 
   &-white {
-    background-color: c.$white;
-    color: c.$primary;
+    background-color: var(--colors-white);
+    color: var(--colors-primary);
   }
 }
