@@ -25,7 +25,7 @@ export function increaseNum(elements) {
  *
  * @param {NodeListOf<Element>} elements array di elementi HTML che contengono solo numeri come children
  */
-export function increaseNumWithCommas(elements, fixedPosition) {
+export function increaseNumWithCommas(elements) {
   try {
     elements.forEach((element) => {
       let val = element.innerHTML.replace(/[\,]/g, "");
@@ -34,7 +34,9 @@ export function increaseNumWithCommas(elements, fixedPosition) {
       const interval = setInterval(() => {
         if (counter < currentNum) {
           counter += currentNum / 240;
-          element.innerHTML = Number(counter.toFixed(fixedPosition)).toLocaleString("en-US");
+          element.innerHTML = Number(counter.toFixed(0)).toLocaleString(
+            "en-US"
+          );
         } else {
           clearInterval(interval);
         }
