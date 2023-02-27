@@ -14,8 +14,8 @@ export function increaseNum(elements) {
         } else {
           clearInterval(interval);
         }
-      });
-    }, 300);
+      }, 3);
+    });
   } catch (error) {
     console.error(error);
   }
@@ -25,7 +25,7 @@ export function increaseNum(elements) {
  *
  * @param {NodeListOf<Element>} elements array di elementi HTML che contengono solo numeri come children
  */
-export function increaseNumWithCommas(elements) {
+export function increaseNumWithCommas(elements, fixedPosition) {
   try {
     elements.forEach((element) => {
       let val = element.innerHTML.replace(/[\,]/g, "");
@@ -34,12 +34,12 @@ export function increaseNumWithCommas(elements) {
       const interval = setInterval(() => {
         if (counter < currentNum) {
           counter += currentNum / 240;
-          element.innerHTML = counter.toLocaleString("en-US");
+          element.innerHTML = Number(counter.toFixed(fixedPosition)).toLocaleString("en-US");
         } else {
           clearInterval(interval);
         }
-      });
-    }, 300);
+      }, 3);
+    });
   } catch (error) {
     console.error(error);
   }
