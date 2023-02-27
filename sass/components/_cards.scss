@@ -63,7 +63,6 @@
         padding: 0;
         font-size: 1rem;
         font-weight: 400;
-        color: #7b6dab;
         
     }
   }
@@ -73,17 +72,16 @@
     padding: 0;
     padding-left: 0.8rem;
     font-size: 1rem;
-    color: #7b6dab;
   }
 
 
 .card-gold {
     color: c.$text;
-    width: 280px;
-    height: 360px;
-    background: linear-gradient(180deg, #fdab32, #ffd800);
+    width: 275px;
+    height: 369px;
+    background: linear-gradient(#ffb237 0%, #ffcd51 51.17%, #ffe76a 100%);
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: v.$radius-card;
     background-color: white;
     display: flex;
     flex-flow: column;
@@ -97,7 +95,7 @@
         align-items: flex-start;
 
         svg {
-            width: 2.5rem;
+            width: 33px;
         }
     }
 
@@ -107,16 +105,30 @@
         margin-top: 0.5rem;
         padding: 0;
         font-size: 1rem;
+        line-height: 1.5;
+        font-weight: 600;
     }
 
     div {
         div {
-            font-size: 2.5rem;
+            font-size: 32px;
+            @include m.media(lg){
+                font-size: 40px;
+            }
         }
 
         p:nth-child(4) {
             margin-top: 1rem;
-            font-weight: 100;
+            font-weight: 400;
+        }
+    }
+    button{
+        border-radius: 16px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        svg{
+            fill: var(--colors-white)
         }
     }
 

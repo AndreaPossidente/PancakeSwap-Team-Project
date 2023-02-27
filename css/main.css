@@ -381,7 +381,6 @@ body:has(#design-system) {
   padding: 0;
   font-size: 1rem;
   font-weight: 400;
-  color: #7b6dab;
 }
 
 p {
@@ -390,16 +389,15 @@ p {
   padding: 0;
   padding-left: 0.8rem;
   font-size: 1rem;
-  color: #7b6dab;
 }
 
 .card-gold {
   color: #280d5f;
-  width: 280px;
-  height: 360px;
-  background: linear-gradient(180deg, #fdab32, #ffd800);
+  width: 275px;
+  height: 369px;
+  background: linear-gradient(#ffb237 0%, #ffcd51 51.17%, #ffe76a 100%);
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 24px;
   background-color: white;
   display: flex;
   flex-flow: column;
@@ -413,7 +411,7 @@ p {
   align-items: flex-start;
 }
 .card-gold .card-icon svg {
-  width: 2.5rem;
+  width: 33px;
 }
 .card-gold p {
   display: inline-block;
@@ -421,13 +419,29 @@ p {
   margin-top: 0.5rem;
   padding: 0;
   font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
 }
 .card-gold div div {
-  font-size: 2.5rem;
+  font-size: 32px;
+}
+@media screen and (min-width: 852px) {
+  .card-gold div div {
+    font-size: 40px;
+  }
 }
 .card-gold div p:nth-child(4) {
   margin-top: 1rem;
-  font-weight: 100;
+  font-weight: 400;
+}
+.card-gold button {
+  border-radius: 16px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-gold button svg {
+  fill: var(--colors-white);
 }
 
 .banner-warning {
@@ -1745,6 +1759,182 @@ body {
   margin-left: 4px;
 }
 
+.win-section {
+  background: var(--colors-gradientBlue2);
+  overflow: hidden;
+}
+.win-section .container {
+  position: relative;
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  padding: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--colors-backgroundAlt2);
+  backdrop-filter: blur(12px);
+  border-radius: 72px;
+}
+@media screen and (min-width: 852px) {
+  .win-section .container {
+    width: 87%;
+  }
+}
+@media screen and (min-width: 852px) {
+  .win-section .container > .win-content {
+    width: 100%;
+  }
+}
+.win-section .container > .win-content > h2 {
+  font-size: 32px;
+  text-align: center;
+  color: var(--colors-text);
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 852px) {
+  .win-section .container > .win-content > h2 {
+    font-size: 40px;
+  }
+}
+.win-section .container > .win-content > h2 span {
+  color: var(--colors-secondary);
+}
+.win-section .container > .win-content .description {
+  color: var(--colors-textSubtle);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.win-section .container > .win-content .section-win-cards {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 2rem;
+}
+@media screen and (min-width: 852px) {
+  .win-section .container > .win-content .section-win-cards {
+    flex-flow: row;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 852px) {
+  .win-section .container > .win-content .section-win-cards .card-gold {
+    transform: rotate(-2.36deg);
+  }
+}
+.win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) {
+  background: var(--colors-gradientViolet2);
+  box-shadow: 0 4px var(--colors-text);
+}
+@media screen and (min-width: 852px) {
+  .win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) {
+    transform: rotate(2.36deg);
+  }
+}
+.win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) .card-icon svg {
+  fill: var(--colors-white);
+}
+.win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) > div {
+  color: var(--colors-white);
+}
+.win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) > div .win-section-span {
+  color: var(--colors-gold);
+}
+.win-section .win-images-1 {
+  position: absolute;
+  display: flex;
+  max-width: 192px;
+  top: -64px;
+  right: 0;
+}
+@media screen and (min-width: 852px) {
+  .win-section .win-images-1 {
+    max-width: 100%;
+  }
+}
+.win-section .win-images-1 .win-images-content {
+  position: relative;
+  max-height: 512px;
+}
+.win-section .win-images-1 .win-images-content > img {
+  max-height: 512px;
+  visibility: hidden;
+  height: auto;
+  max-width: 100%;
+}
+.win-section .win-images-1 .win-images-content .win-image {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.win-section .win-images-1 .win-images-content .win-image:nth-child(2) {
+  animation: 3s ease-in-out 1s infinite normal none running anim-float-1;
+}
+.win-section .win-images-1 .win-images-content .win-image:nth-child(3) {
+  animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
+}
+.win-section .win-images-1 .win-images-content .win-image:nth-child(4) {
+  animation: 3s ease-in-out 0.33s infinite normal none running anim-float-3;
+}
+.win-section .win-images-1 .win-images-content .win-image:nth-child(5) {
+  animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
+}
+.win-section .win-images-1 .win-images-content .win-image img {
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+.win-section .win-images-2 {
+  position: absolute;
+  display: flex;
+  max-width: 192px;
+  bottom: -64px;
+  left: 0;
+}
+@media screen and (min-width: 852px) {
+  .win-section .win-images-2 {
+    max-width: 100%;
+  }
+}
+.win-section .win-images-2 .win-images-content {
+  position: relative;
+  max-height: 512px;
+}
+.win-section .win-images-2 .win-images-content > img {
+  max-height: 512px;
+  visibility: hidden;
+  height: auto;
+  max-width: 100%;
+}
+.win-section .win-images-2 .win-images-content .win-image {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.win-section .win-images-2 .win-images-content .win-image:nth-child(2) {
+  animation: 3s ease-in-out 1s infinite normal none running anim-float-1;
+}
+.win-section .win-images-2 .win-images-content .win-image:nth-child(3) {
+  animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
+}
+.win-section .win-images-2 .win-images-content .win-image:nth-child(4) {
+  animation: 3s ease-in-out 0.33s infinite normal none running anim-float-3;
+}
+.win-section .win-images-2 .win-images-content .win-image:nth-child(5) {
+  animation: 3s ease-in-out 0.66s infinite normal none running anim-float-1;
+}
+.win-section .win-images-2 .win-images-content .win-image img {
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
 :root {
   color-scheme: light;
   --colors-white: #fff;
@@ -1788,7 +1978,9 @@ body {
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
   --colors-gradientCardHeader: linear-gradient(111.68deg, #f2ecf2, #e8f2f6);
   --colors-gradientBlue: linear-gradient(180deg, #a7e8f1, #94e1f2);
+  --colors-gradientBlue2: linear-gradient(#6fb6f1 0%, #eaf2f6 100%);
   --colors-gradientViolet: linear-gradient(180deg, #e2c9fb, #cdb8fa);
+  --colors-gradientViolet2: linear-gradient(#7645d9 0%, #5121b1 100%);
   --colors-gradientVioletAlt: linear-gradient(180deg, #cbd7ef, #9a9fd0);
   --colors-gradientGold: linear-gradient(180deg, #ffd800, #fdab32);
   --colors-gradientBold: linear-gradient(#53dee9, #7645d9);
@@ -1838,7 +2030,9 @@ body {
     --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
     --colors-gradientCardHeader: linear-gradient(111.68deg, #f2ecf2, #e8f2f6);
     --colors-gradientBlue: linear-gradient(180deg, #a7e8f1, #94e1f2);
+    --colors-gradientBlue2: linear-gradient(#6fb6f1 0%, #eaf2f6 100%);
     --colors-gradientViolet: linear-gradient(180deg, #e2c9fb, #cdb8fa);
+    --colors-gradientViolet2: linear-gradient(#7645d9 0%, #5121b1 100%);
     --colors-gradientVioletAlt: linear-gradient(180deg, #cbd7ef, #9a9fd0);
     --colors-gradientGold: linear-gradient(180deg, #ffd800, #fdab32);
     --colors-gradientBold: linear-gradient(#53dee9, #7645d9);
