@@ -10,26 +10,22 @@
 
 @keyframes move-diagonal {
     0% {
-        transform: translate(0, 0);/* sposta l'immagine a sinistra in alto */
+        transform: translate(0, 0);
+        /* sposta l'immagine a sinistra in alto */
     }
+
     50% {
-        transform: translate(10px, 10px);/* sposta l'immagine a destra in basso */
+        transform: translate(10px, 10px);
+        /* sposta l'immagine a destra in basso */
     }
+
     100% {
-        transform: translate(0, 0);/* ritorna l'immagine alla posizione originale */
+        transform: translate(0, 0);
+        /* ritorna l'immagine alla posizione originale */
     }
 }
 
 .hero-swiper-section {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-    z-index: 1;
-    padding: v.$space-10 v.$space-6;
-    padding: v.$space-10 v.$space-0;
-
     background: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
     margin: 0px;
     width: 100%;
@@ -39,6 +35,14 @@
     padding-top: 16px;
     padding-bottom: 16px;
 
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 1;
+    padding: v.$space-10 v.$space-6;
+    padding: v.$space-10 v.$space-0;
 }
 
 .homepage-hero {
@@ -102,7 +106,6 @@
     margin: 0px;
     padding: 0px;
     border: 0px none;
-
 }
 
 .btn-hero {
@@ -163,8 +166,6 @@ a.trade-hero {
     color: var(--colors-primary);
 }
 
-
-
 .hero-img-container {
     display: flex;
     height: 192px;
@@ -181,13 +182,9 @@ a.trade-hero {
     max-width: 100%;
 
     animation-name: move-diagonal;
-    /* nome dell'animazione */
     animation-duration: 3s;
-    /* durata dell'animazione */
     animation-timing-function: ease-in-out;
-    /* tipo di interpolazione */
     animation-iteration-count: infinite;
-    /* ripeti l'animazione all'infinito */
 }
 
 @media screen and (min-width: 370px) {
@@ -196,8 +193,6 @@ a.trade-hero {
         padding-right: 24px;
     }
 }
-
-
 
 @media screen and (min-width: 576px) {
     .hero-swiper-section {
@@ -221,7 +216,6 @@ a.trade-hero {
         flex: 1 1 0%;
         margin-bottom: 0px;
         height: 100%;
-        width: 100%;
     }
 }
 
