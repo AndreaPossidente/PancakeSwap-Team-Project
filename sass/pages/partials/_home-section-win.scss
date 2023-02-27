@@ -9,13 +9,25 @@
         position: relative;
         display: flex;
         width: 90%;
-        @include m.media(lg){
-            width: 87%;
-        }
         justify-content: center;
         padding: 25px;
         margin-top: 20px;
         margin-bottom: 20px;
+        border: 1px solid var(--colors-cardBorder);
+        @include m.media(lg){
+            max-width: 80%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 50px;
+
+        }
+        @media screen and (min-width: 1100px) {
+            max-width: 47%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 50px;
+        }
+        
         background-color: var(--colors-backgroundAlt2);
         backdrop-filter: blur(12px);
         border-radius: 72px;
@@ -65,7 +77,7 @@
                     }
                     &:nth-child(2) {
                         background: var(--colors-gradientViolet2);
-                        box-shadow: 0 4px var(--colors-text);
+                        box-shadow: 0 4px #280d5f;
                         @include m.media(lg){
                             transform:  rotate(2.36deg);
                         }
@@ -171,7 +183,7 @@
                 }
                 &:nth-child(4){
                     animation: 3s ease-in-out 0.33s infinite normal none running
-                    anim-float-3;
+                    anim-float-1;
                 }
                 &:nth-child(5){
                     animation: 3s ease-in-out 0.66s infinite normal none running

@@ -326,10 +326,10 @@ body:has(#design-system) {
   height: 280px;
   padding: 1rem;
   border-radius: 2rem;
-  background-color: white;
+  background-color: var(--colors-backgroundAlt);
   display: flex;
   flex-flow: column;
-  box-shadow: 0px 4px #e7e3eb;
+  box-shadow: 0px 4px var(--colors-cardBorder);
 }
 .card-small .card-icon {
   display: inline;
@@ -346,10 +346,10 @@ body:has(#design-system) {
 }
 .card-small .card-icon svg {
   width: 2.5rem;
-  fill: #7545d9;
+  fill: var(--colors-secondary);
 }
 .card-small h3 {
-  color: #280460;
+  color: var(--colors-text);
   margin: 0;
   padding: 0;
   padding-bottom: 1rem;
@@ -368,7 +368,7 @@ body:has(#design-system) {
 }
 .card-small h3 div {
   margin-top: 1rem;
-  color: #7645d9;
+  color: var(--colors-secondary);
 }
 @media screen and (min-width: 852px) {
   .card-small h3 div {
@@ -402,7 +402,7 @@ p {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  box-shadow: 0 4px #f0b90b;
+  box-shadow: 0 4px var(--colors-binance);
   font-size: 0.8rem;
 }
 .card-gold .card-icon {
@@ -441,7 +441,7 @@ p {
   margin-right: auto;
 }
 .card-gold button svg {
-  fill: var(--colors-white);
+  fill: var(--colors-backgroundAlt);
 }
 
 .banner-warning {
@@ -1026,7 +1026,7 @@ body {
 }
 
 .reassurance-section {
-  background: linear-gradient(180deg, #fff 22%, #d7caec 100%);
+  background: var(--colors-gradientBubblegum2);
 }
 .reassurance-section .container {
   display: flex;
@@ -1035,7 +1035,7 @@ body {
 }
 .reassurance-section .container .reassurance-description {
   max-width: 100%;
-  color: #7a6eaa;
+  color: var(--colors-textSubtle);
   padding: 1rem;
   text-align: center;
 }
@@ -1046,7 +1046,7 @@ body {
 }
 .reassurance-section .container .reassurance-description h1 {
   line-height: 1.1;
-  color: #280d5f;
+  color: var(--colors-text);
   font-size: 32px;
 }
 @media screen and (min-width: 852px) {
@@ -1771,13 +1771,25 @@ body {
   padding: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
+  border: 1px solid var(--colors-cardBorder);
   background-color: var(--colors-backgroundAlt2);
   backdrop-filter: blur(12px);
   border-radius: 72px;
 }
 @media screen and (min-width: 852px) {
   .win-section .container {
-    width: 87%;
+    max-width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 50px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .win-section .container {
+    max-width: 47%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 50px;
   }
 }
 @media screen and (min-width: 852px) {
@@ -1826,7 +1838,7 @@ body {
 }
 .win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) {
   background: var(--colors-gradientViolet2);
-  box-shadow: 0 4px var(--colors-text);
+  box-shadow: 0 4px #280d5f;
 }
 @media screen and (min-width: 852px) {
   .win-section .container > .win-content .section-win-cards .card-gold:nth-child(2) {
@@ -1923,7 +1935,7 @@ body {
   animation: 3s ease-in-out 0.66s infinite normal none running anim-float-2;
 }
 .win-section .win-images-2 .win-images-content .win-image:nth-child(4) {
-  animation: 3s ease-in-out 0.33s infinite normal none running anim-float-3;
+  animation: 3s ease-in-out 0.33s infinite normal none running anim-float-1;
 }
 .win-section .win-images-2 .win-images-content .win-image:nth-child(5) {
   animation: 3s ease-in-out 0.66s infinite normal none running anim-float-1;
@@ -1975,6 +1987,7 @@ body {
   --colors-textSubtle: #7a6eaa;
   --colors-disabled: #e9eaeb;
   --colors-gradientBubblegum: linear-gradient(139.73deg, #e5fdff, #f3efff);
+  --colors-gradientBubblegum2: linear-gradient(180deg, #fff 22%, #d7caec 100%);
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
   --colors-gradientCardHeader: linear-gradient(111.68deg, #f2ecf2, #e8f2f6);
   --colors-gradientBlue: linear-gradient(180deg, #a7e8f1, #94e1f2);
@@ -2027,6 +2040,7 @@ body {
     --colors-textSubtle: #7a6eaa;
     --colors-disabled: #e9eaeb;
     --colors-gradientBubblegum: linear-gradient(139.73deg, #e5fdff, #f3efff);
+    --colors-gradientBubblegum2: linear-gradient(180deg, #fff 22%, #d7caec 100%);
     --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
     --colors-gradientCardHeader: linear-gradient(111.68deg, #f2ecf2, #e8f2f6);
     --colors-gradientBlue: linear-gradient(180deg, #a7e8f1, #94e1f2);
@@ -2078,9 +2092,11 @@ body {
   --colors-textSubtle: #b8add2;
   --colors-disabled: #524b63;
   --colors-gradientBubblegum: linear-gradient(139.73deg, #313d5c, #3d2a54);
+  --colors-gradientBubblegum2: linear-gradient(180deg, #09070c 22%, #201335 100%);
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #3d2a54, #313d5c);
   --colors-gradientCardHeader: linear-gradient(166.77deg, #3b4155, #3a3045);
   --colors-gradientBlue: linear-gradient(180deg, #00707f, #19778c);
+  --colors-gradientBlue2: linear-gradient(180deg, #0b4576 0%, #091115 100%);
   --colors-gradientViolet: linear-gradient(180deg, #6c4999, #6d4db2);
   --colors-gradientVioletAlt: linear-gradient(180deg, #434575, #66578d);
   --colors-gradientGold: linear-gradient(180deg, #ffd800, #fdab32);
