@@ -1119,7 +1119,7 @@ body {
 .reassurance-section .reassurance-background svg {
   width: 100%;
   min-height: 48px;
-  fill: rgba(215, 202, 236, 0.9);
+  fill: var(--colors-backgroundRe);
 }
 
 .earn-section {
@@ -1986,6 +1986,7 @@ body {
   --colors-textDisabled: #bdc2c4;
   --colors-textSubtle: #7a6eaa;
   --colors-disabled: #e9eaeb;
+  --colors-backgroundRe: rgba(215, 202, 236, 0.9019607843);
   --colors-gradientBubblegum: linear-gradient(139.73deg, #e5fdff, #f3efff);
   --colors-gradientBubblegum2: linear-gradient(180deg, #fff 22%, #d7caec 100%);
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
@@ -2039,6 +2040,7 @@ body {
     --colors-textDisabled: #bdc2c4;
     --colors-textSubtle: #7a6eaa;
     --colors-disabled: #e9eaeb;
+    --colors-backgroundRe: rgba(215, 202, 236, 0.9019607843);
     --colors-gradientBubblegum: linear-gradient(139.73deg, #e5fdff, #f3efff);
     --colors-gradientBubblegum2: linear-gradient(180deg, #fff 22%, #d7caec 100%);
     --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
@@ -2091,6 +2093,7 @@ body {
   --colors-textDisabled: #666171;
   --colors-textSubtle: #b8add2;
   --colors-disabled: #524b63;
+  --colors-backgroundRe: #201335;
   --colors-gradientBubblegum: linear-gradient(139.73deg, #313d5c, #3d2a54);
   --colors-gradientBubblegum2: linear-gradient(180deg, #09070c 22%, #201335 100%);
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #3d2a54, #313d5c);
