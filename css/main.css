@@ -814,6 +814,110 @@ p {
   background: -webkit-linear-gradient(top, rgb(118, 69, 217) 0%, rgb(69, 42, 122) 100%);
 }
 
+.form-fields {
+  background-color: rgb(208, 232, 239);
+  width: max-content;
+  height: max-content;
+  display: grid;
+  padding: 0px 10px 10px 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 30px 4px 30px 50px;
+  grid-template-areas: "p" "a" "ricerca" "select" "input";
+}
+.form-fields .form-select {
+  border: none;
+  width: 60px;
+  height: 60px;
+  color: rgb(97, 1, 97);
+  font-weight: bold;
+  background-color: inherit;
+  grid-area: select;
+}
+.form-fields #form-p {
+  text-decoration: underline;
+  text-underline-position: under;
+  grid-area: p;
+  font-size: larger;
+  transform: translateX(-120px);
+}
+.form-fields .form-p-search {
+  grid-area: a;
+  font-size: smaller;
+  color: rgb(121, 56, 126);
+  transform: translateX(-150px);
+}
+.form-fields .form-select-container {
+  display: flex;
+  transform: translateX(-80px) translateY(50px);
+}
+.form-fields #BNB {
+  transform: translateX(94px);
+  width: 53px;
+}
+.form-fields #BNB-img {
+  transform: translateX(90px) translateY(20px);
+}
+.form-fields input {
+  border-radius: 10px;
+  border: 1px solid rgb(209, 206, 206);
+  height: 35px;
+}
+.form-fields .form-text {
+  text-align: end;
+  padding-right: 10px;
+}
+.form-fields .form-find {
+  width: 200px;
+  border-radius: 13px;
+  transform: translateX(-70px);
+}
+.form-fields .label-for-search {
+  color: rgb(121, 56, 126);
+  grid-area: ricerca;
+}
+.form-fields .form-image {
+  transform: translateY(20px);
+  width: 20px;
+  height: 20px;
+  grid-area: select;
+}
+.form-fields .copy-button {
+  transform: translateX(10px) translateY(24px);
+  width: 10px;
+  height: 10px;
+}
+
+.icons {
+  background-color: rgb(178, 237, 243);
+  height: 20vh;
+  width: 58vh;
+  padding: 1px 0px 0px 20px;
+}
+.icons .icons-p {
+  font-size: larger;
+  text-decoration: underline;
+  text-underline-position: under;
+  transform: translateX(-15px);
+}
+.icons .icons-short-img {
+  width: auto;
+  height: 30px;
+  grid-area: short;
+  padding-right: 5px;
+  transform: translateY(20px);
+}
+.icons .long-img {
+  transform: translateY(40px);
+}
+.icons .long-img {
+  width: auto;
+  height: 30px;
+  grid-area: long;
+}
+.icons #icons-short-list {
+  transform: translateX(20px) translateY(20px);
+}
+
 body {
   font-family: Kanit, sans-serif;
   font-weight: 600;

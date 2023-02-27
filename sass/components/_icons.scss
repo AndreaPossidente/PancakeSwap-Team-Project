@@ -1,0 +1,36 @@
+.icons{
+
+    background-color: rgb(178, 237, 243);
+    height: 20vh;
+    width: 58vh;
+    padding: 1px 0px 0px 20px;
+
+    .icons-p{
+        font-size: larger;
+        text-decoration: underline;
+        text-underline-position: under;
+        transform: translateX(-15px);
+    }
+
+    .icons-short-img{
+        width: auto;
+        height: 30px;
+        grid-area: short;
+        padding-right: 5px;
+        transform: translateY(20px);
+    }
+
+    .long-img{
+        transform: translateY(40px);
+    }
+
+    .long-img{
+        width: auto;
+        height: 30px;
+        grid-area:long;
+    }
+
+    #icons-short-list{
+        transform: translateX(20px)translateY(20px);
+    }
+}
