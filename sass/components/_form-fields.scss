@@ -1,0 +1,89 @@
+.form-fields{
+    background-color: rgb(208, 232, 239);
+    width: max-content;
+    height: max-content;
+    display: grid;
+    padding: 0px 10px 10px 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 30px 4px 30px 50px;
+    grid-template-areas: 
+    "p"
+    "a"
+    "ricerca"
+    "select"
+    "input";
+
+    .form-select{
+        border:none;
+        width:60px;
+        height: 60px;
+        color:rgb(97, 1, 97);
+        font-weight: bold;
+        background-color: inherit;
+        grid-area: select;
+    }
+
+    #form-p{
+        text-decoration: underline;
+        text-underline-position: under;
+        grid-area: p;
+        font-size: larger;
+        transform: translateX(-120px);
+    }
+
+    .form-p-search{
+        grid-area: a;
+        font-size: smaller;
+        color:rgb(121, 56, 126);
+        transform: translateX(-150px);
+    }
+
+    .form-select-container{
+        display: flex;
+        transform: translateX(-80px) translateY(50px);
+    }
+
+    #BNB{
+        transform: translateX(94px);
+        width: 53px;
+    }
+
+    #BNB-img{
+        transform: translateX(90px)translateY(20px); 
+    }
+
+    input{
+        border-radius: 10px;
+        border:1px solid rgb(209, 206, 206);
+        height: 35px;
+    }
+
+    .form-text{
+        text-align: end;
+        padding-right: 10px;
+    }
+
+    .form-find{
+        width: 200px;
+        border-radius: 13px;
+        transform: translateX(-70px);
+    }
+
+    .label-for-search{
+        color:rgb(121, 56, 126);
+        grid-area: ricerca;
+    }
+
+    .form-image{
+        transform: translateY(20px);
+        width: 20px;
+        height: 20px;  
+        grid-area: select;
+    }
+
+    .copy-button{
+        transform: translateX(10px)translateY(24px);
+        width: 10px;
+        height: 10px;  
+    }
+}
