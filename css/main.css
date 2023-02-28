@@ -1221,7 +1221,7 @@ body {
 }
 .reassurance-section .reassurance-background {
   margin-top: 4rem;
-  background: white;
+  background: var(--colors-background);
   width: 100%;
 }
 .reassurance-section .reassurance-background svg {
