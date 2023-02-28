@@ -56,26 +56,15 @@
         line-height: 1.5;
         font-size: v.$text-sm;
         margin-right: 4px;
-<<<<<<< HEAD
-        color: c.$textDisabled;
-        font-weight: 400;
-        &:nth-child(1) {
-          color: c.$warning;
-=======
         color: var(--colors-textDisabled);
         font-weight: 400;
         &:nth-child(1) {
           color: var(--colors-warning);
->>>>>>> develop
           font-weight: v.$font-bold;
           text-transform: uppercase;
         }
         &:nth-child(3) {
-<<<<<<< HEAD
-          color: c.$white;
-=======
           color: var(--colors-white);
->>>>>>> develop
           font-weight: v.$font-bold;
         }
       }
@@ -87,14 +76,6 @@
     height: 100%;
     border: v.$border-0;
     background-color: transparent;
-<<<<<<< HEAD
-    opacity: 1;
-    flex-shrink: 0;
-    transition: opacity 0.2s ease 0s;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.75;
-=======
     flex-shrink: 0;
     > svg {
       opacity: 1;
@@ -103,13 +84,10 @@
       &:hover {
         opacity: 0.75;
       }
->>>>>>> develop
     }
   }
 }
 // WARNING BANNER END
-<<<<<<< HEAD
-=======
 
 // HOME SLIDER START
 #swiper {
@@ -427,4 +405,3 @@
   );
 }
 // HOME SLIDER END
->>>>>>> develop
