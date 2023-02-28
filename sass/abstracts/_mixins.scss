@@ -16,3 +16,15 @@
     @content;
   }
 }
+<<<<<<< HEAD
+=======
+
+/*
+    Color Scheme Handler
+*/
+@mixin color-scheme($color-scheme) {
+  @each $key, $value in $color-scheme {
+    --colors-#{""+$key}: #{$value};
+  }
+}
+>>>>>>> develop
