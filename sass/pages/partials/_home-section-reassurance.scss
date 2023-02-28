@@ -4,7 +4,7 @@
 
 .reassurance-section {
 
-    background: linear-gradient(180deg, #fff 22%, #d7caec 100%);
+    background: var(--colors-gradientBubblegum2);
 
     .container {
         display: flex;
@@ -18,13 +18,13 @@
                 max-width: 50%;
             }
 
-            color: c.$textSubtle;
+            color: var(--colors-textSubtle);
             padding: 1rem;
             text-align: center;
 
             h1 {
                 line-height: 1.1;
-                color: c.$text;
+                color: var(--colors-text);
                 font-size: 32px;
 
                 @include m.media(lg) {
@@ -117,7 +117,7 @@
         svg {
             width: 100%;
             min-height: 48px;
-            fill: rgba(215, 202, 236, 0.9);
+            fill: var(--colors-backgroundRe);
         }
     }
 }

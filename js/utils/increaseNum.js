@@ -14,8 +14,8 @@ export function increaseNum(elements) {
         } else {
           clearInterval(interval);
         }
-      });
-    }, 300);
+      }, 3);
+    });
   } catch (error) {
     console.error(error);
   }
@@ -34,12 +34,14 @@ export function increaseNumWithCommas(elements) {
       const interval = setInterval(() => {
         if (counter < currentNum) {
           counter += currentNum / 240;
-          element.innerHTML = counter.toLocaleString("en-US");
+          element.innerHTML = Number(counter.toFixed(0)).toLocaleString(
+            "en-US"
+          );
         } else {
           clearInterval(interval);
         }
-      });
-    }, 300);
+      }, 3);
+    });
   } catch (error) {
     console.error(error);
   }
