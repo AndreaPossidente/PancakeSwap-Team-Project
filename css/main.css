@@ -216,9 +216,35 @@ body:has(#design-system) {
   opacity: 1;
   cursor: pointer;
 }
+
 .button-thin:hover {
   transition: opacity 1s ease 0s;
   opacity: 0.6;
+  cursor: pointer;
+}
+
+.button-fat:hover {
+  transition: opacity 1s ease 0s;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button-medium:hover {
+  transition: opacity 1s ease 0s;
+  opacity: 0.6;
+  cursor: pointer;
+
+}
+.button-square-arrow:hover{
+  transition: opacity 1s ease 0s;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button-medium-transparent:hover{
+  transition: opacity 1s ease 0s;
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 .button-container {
