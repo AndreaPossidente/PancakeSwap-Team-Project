@@ -8,6 +8,8 @@ body {
   font-weight: v.$font-bold;
 }
 
+<<<<<<< HEAD
+=======
 /*--typography--start--*/
 .typo-title {
   text-decoration: underline;
@@ -63,6 +65,7 @@ body {
 
 /*--typography--end--*/
 
+>>>>>>> develop
 /*--color--start--*/
 .color-title {
   text-decoration: underline;
@@ -100,6 +103,53 @@ body {
 }
 
 .color1 {
+<<<<<<< HEAD
+  background-color: c.$primary;
+}
+
+.color2 {
+  background-color: c.$secondary;
+}
+
+.color3 {
+  background-color: c.$failure;
+}
+
+.color4 {
+  background-color: c.$warning;
+}
+
+.color5 {
+  background: c.$gradientBlue;
+}
+
+.color6 {
+  background: c.$gradientViolet;
+}
+
+.color7 {
+  background: c.$gradientVioletAlt;
+}
+
+.color8 {
+  background: c.$gradientGold;
+}
+
+.color9 {
+  background: c.$gradientBubblegum;
+}
+
+.color10 {
+  background: c.$gradientInverseBubblegum;
+}
+
+.color11 {
+  background: c.$gradientCardHeader;
+}
+
+.color12 {
+  background: c.$gradientBold;
+=======
   background-color: var(--colors-primary);
 }
 
@@ -145,6 +195,7 @@ body {
 
 .color12 {
   background: var(--colors-gradientBold);
+>>>>>>> develop
 }
 
 .color1,
@@ -168,6 +219,21 @@ body {
 }
 
 .color1 div:nth-child(3) {
+<<<<<<< HEAD
+  background-color: c.$primaryBright;
+}
+
+.color1 div:nth-child(4) {
+  background-color: c.$primaryDark;
+}
+
+.color2 div:first-child {
+  background-color: c.$inputSecondary;
+}
+
+.color2 div:nth-child(2) {
+  background-color: c.$textSubtle;
+=======
   background-color: var(--colors-primaryBright);
 }
 
@@ -181,6 +247,7 @@ body {
 
 .color2 div:nth-child(2) {
   background-color: var(--colors-textSubtle);
+>>>>>>> develop
 }
 
 .color2 div:nth-child(3) {
@@ -188,5 +255,10 @@ body {
 }
 
 .color2 div:nth-child(4) {
+<<<<<<< HEAD
+  background-color: c.$text;
+}
+=======
   background-color: var(--colors-text);
 }
+>>>>>>> develop
