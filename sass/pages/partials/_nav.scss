@@ -1,0 +1,54 @@
+.header-nav{
+    .nav-desktop{
+        display: none;
+    }
+
+    .nav-mobile{
+        .nav-top{
+            height: 56px;
+            background-color: var(--colors-backgroundAlt);
+            border-bottom: 1px solid var(--colors-cardBorder);
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            .nav-logo{
+                flex-grow: 1;
+                svg{
+                    width: 30px;
+                }
+            }
+            .nav-language-switcher, .nav-options{
+                display: flex;
+                button{
+                    outline: none;
+                    background: none;
+                    border: none;
+                    height: 24px;
+                    margin-right: 8px;
+                    svg{
+                        fill: var(--colors-textSubtle);
+                        width: 24px;
+                    }
+                }
+            }
+            
+            
+            .nav-network{
+                .network-button{
+                    display: flex;
+                    align-items: center;
+                    background-color: var(--colors-tertiary);
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0px inset;
+                    border-radius: 16px;
+                    div{
+                        height: 32px;
+                        img{
+                            width: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

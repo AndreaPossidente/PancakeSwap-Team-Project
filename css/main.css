@@ -2261,6 +2261,52 @@ a.trade-hero {
     font-size: 20px;
   }
 }
+.header-nav .nav-desktop {
+  display: none;
+}
+.header-nav .nav-mobile .nav-top {
+  height: 56px;
+  background-color: var(--colors-backgroundAlt);
+  border-bottom: 1px solid var(--colors-cardBorder);
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.header-nav .nav-mobile .nav-top .nav-logo {
+  flex-grow: 1;
+}
+.header-nav .nav-mobile .nav-top .nav-logo svg {
+  width: 30px;
+}
+.header-nav .nav-mobile .nav-top .nav-language-switcher, .header-nav .nav-mobile .nav-top .nav-options {
+  display: flex;
+}
+.header-nav .nav-mobile .nav-top .nav-language-switcher button, .header-nav .nav-mobile .nav-top .nav-options button {
+  outline: none;
+  background: none;
+  border: none;
+  height: 24px;
+  margin-right: 8px;
+}
+.header-nav .nav-mobile .nav-top .nav-language-switcher button svg, .header-nav .nav-mobile .nav-top .nav-options button svg {
+  fill: var(--colors-textSubtle);
+  width: 24px;
+}
+.header-nav .nav-mobile .nav-top .nav-network .network-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--colors-tertiary);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0px inset;
+  border-radius: 16px;
+}
+.header-nav .nav-mobile .nav-top .nav-network .network-button div {
+  height: 32px;
+}
+.header-nav .nav-mobile .nav-top .nav-network .network-button div img {
+  width: 32px;
+}
+
 :root {
   color-scheme: light;
   --colors-white: #fff;
