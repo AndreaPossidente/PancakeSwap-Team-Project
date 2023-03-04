@@ -4,16 +4,72 @@
 
 .header-nav {
     .nav-hidden-opacity {
-        display: none;
-        transition: opacity 1s linear 0.2s;
+        visibility: hidden;
+        position: absolute;
+        top: -50px;
+        width: 200vw;
+        height: 100vh;
+        z-index: 1110;
+        opacity: 1;
+        background-color: var(--colors-overlay);
+        transition: opacity 0.3s linear;
     }
 
-    .nav-dropdown {
-        display: none;
+    .nav-util-js {
+        display: inline-block !important;
+        position: relative;
+        background-color: var(--colors-backgroundAlt);
+        border: 1px solid var(--colors-cardBorder);
+        border-radius: 16px;
+        padding-bottom: 8px;
+        padding-top: 4px;
+        margin-bottom: 0px;
+        width: 280px;
+        inset: 0px auto auto 0px;
+        transform: translate(0, 40px);
+        z-index: 200;
+
+        position: absolute;
+        background-color: var(--colors-backgroundAlt);
+        border: 1px solid var(--colors-cardBorder);
+        border-radius: 16px;
+        padding-bottom: 4px;
+        padding-top: 8px;
+        margin-bottom: 0px;
+        width: calc(100% - 32px);
+        inset: auto auto 0px 0px;
+        transform: translate(0px, -50px);
+
+
+        ul {
+            border-radius: 16px;
+
+            hr {
+                border-color: var(--colors-cardBorder);
+                border-style: solid;
+                border-width: 1px 0px 0px;
+                margin: 4px 0px;
+            }
+
+        }
+
+        .nav-hidden-opacity {
+            visibility: visible;
+            position: fixed;
+            background-color: var(--colors-overlay);
+            opacity: 0.4;
+            top: -50px;
+            width: 200vw;
+            height: 100vh;
+
+            &:hover {
+                display: none;
+            }
+
+        }
+
 
         li {
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
             -moz-box-align: center;
             align-items: center;
             border: 0px none;
@@ -31,15 +87,90 @@
             padding-right: 16px;
             width: 100%;
             pointer-events: inherit;
+
+            a {
+                color: var(--colors-textSubtle);
+            }
+
+            &:hover {
+                background-color: var(--colors-tertiary);
+
+            }
+
         }
+
+        hr {
+            border-color: var(--colors-cardBorder);
+            border-style: solid;
+            border-width: 1px 0px 0px;
+            margin: 4px 0px;
+        }
+
+    }
+
+    .nav-dropdown {
+        display: none;
+        position: relative;
+        background-color: var(--colors-backgroundAlt);
+        border: 1px solid var(--colors-cardBorder);
+        border-radius: 16px;
+        padding-bottom: 8px;
+        padding-top: 4px;
+        margin-bottom: 0px;
+        width: 280px;
+        inset: 0px auto auto 0px;
+        transform: translate(0, 40px);
+        z-index: 200;
+
+
+        li {
+            -moz-box-align: center;
+            align-items: center;
+            border: 0px none;
+            background: transparent;
+            color: var(--colors-textSubtle);
+            cursor: pointer;
+            font-weight: 400;
+            display: flex;
+            font-size: 16px;
+            height: 48px;
+            -moz-box-pack: justify;
+            justify-content: space-between;
+            outline: 0px;
+            padding-left: 16px;
+            padding-right: 16px;
+            width: 100%;
+            pointer-events: inherit;
+
+            a {
+                color: var(--colors-textSubtle);
+            }
+
+            &:hover {
+                background-color: var(--colors-tertiary);
+
+            }
+
+        }
+
+        hr {
+            border-color: var(--colors-cardBorder);
+            border-style: solid;
+            border-width: 1px 0px 0px;
+            margin: 4px 0px;
+        }
+
     }
 
     .nav-desktop {
         display: none;
+        top: 0;
 
-        @include m.media(lg) {
+        @media screen and (min-width: 980px) {
             display: flex;
+
         }
+
 
         position: fixed;
         width: 100%;
@@ -67,8 +198,6 @@
             margin-left: 24px;
 
             .nav-list-item {
-                padding-top: 4px;
-                padding-bottom: 4px;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -78,12 +207,20 @@
                 opacity: 1;
                 pointer-events: inherit;
                 padding: 0px 16px;
-                height: 48px;
+                height: 50px;
                 cursor: pointer;
 
                 &:hover {
                     background: var(--colors-tertiary);
                     border-radius: 16px;
+
+                    .nav-dropdown {
+                        display: block;
+                        position: absolute;
+                        transform: translate(0, 50px);
+
+
+                    }
                 }
 
                 svg {
@@ -164,7 +301,7 @@
     }
 
     .nav-mobile {
-        @include m.media(lg) {
+        @include m.media(xl) {
             display: none;
         }
 
@@ -179,6 +316,7 @@
             align-items: center;
             padding-left: 1rem;
             padding-right: 1rem;
+            top: 0;
             transition: top 0.1s linear 0.2s;
 
             .nav-logo {
@@ -260,6 +398,7 @@
         }
 
         .nav-bottom {
+            position: relative;
             display: flex;
             position: fixed;
             width: 100%;
@@ -282,7 +421,10 @@
                 line-height: 1.5;
                 font-weight: 400;
                 font-size: 10px;
-                padding: 4px 12px;
+                height: 50px;
+                padding-left: 12px;
+                padding-right: 12px;
+                padding-bottom: 4px;
                 cursor: pointer;
 
                 &:hover {
@@ -290,13 +432,18 @@
                     border-radius: 16px;
 
                     .nav-hidden-opacity {
-                        display: block;
+                        visibility: visible;
                         position: fixed;
                         background-color: var(--colors-overlay);
                         opacity: 0.4;
                         top: -50px;
-                        width: 150vw;
+                        width: 200vw;
                         height: 100vh;
+
+                        &:hover {
+                            display: none;
+                        }
+
                     }
 
                     .nav-dropdown {
@@ -306,25 +453,39 @@
                         border: 1px solid var(--colors-cardBorder);
                         border-radius: 16px;
                         padding-bottom: 4px;
-                        padding-top: 4px;
+                        padding-top: 8px;
                         margin-bottom: 0px;
                         width: calc(100% - 32px);
-                        pointer-events: none;
-                        position: absolute;
                         inset: auto auto 0px 0px;
-                        transform: translate(0px, -47px);
-                        
-                        &:hover {
-                            .nav-hidden-opacity {
-                                display: block;
-                                position: fixed;
-                                background-color: var(--colors-overlay);
-                                opacity: 0.4;
-                                top: -50px;
-                                width: 150vw;
-                                height: 100vh;
+                        transform: translate(0px, -50px);
+
+
+                        ul {
+                            border-radius: 16px;
+
+                            hr {
+                                border-color: var(--colors-cardBorder);
+                                border-style: solid;
+                                border-width: 1px 0px 0px;
+                                margin: 4px 0px;
                             }
+
                         }
+
+
+                    }
+                }
+
+                &:nth-child(3) {
+                    .nav-dropdown {
+                        left: 16px;
+                    }
+                }
+
+                &:nth-child(4),
+                &:nth-child(5) {
+                    .nav-dropdown {
+                        left: 32px;
                     }
                 }
 
