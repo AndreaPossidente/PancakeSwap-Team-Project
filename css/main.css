@@ -2978,6 +2978,9 @@ a.trade-hero {
 .header-nav .nav-mobile .nav-top .nav-options button {
   margin-right: 8px;
 }
+.header-nav .nav-mobile .nav-top .nav-language-switcher {
+  position: relative;
+}
 .header-nav .nav-mobile .nav-top .nav-language-switcher:hover .options-selection {
   opacity: 1;
   max-height: 400px;

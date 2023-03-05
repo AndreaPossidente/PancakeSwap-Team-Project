@@ -409,6 +409,7 @@
             }
 
             .nav-language-switcher {
+                position: relative;
                 &:hover {
                     .options-selection {
                         opacity: 1;
