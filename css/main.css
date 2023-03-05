@@ -2856,6 +2856,13 @@ a.trade-hero {
   height: 50px;
   cursor: pointer;
 }
+.header-nav .nav-desktop .nav-navigator .nav-list-item a {
+  color: var(--colors-textSubtle);
+}
+.header-nav .nav-desktop .nav-navigator .nav-list-item.active a {
+  font-weight: bold;
+  color: var(--colors-secondary);
+}
 .header-nav .nav-desktop .nav-navigator .nav-list-item:hover {
   background: var(--colors-tertiary);
   border-radius: 16px;
