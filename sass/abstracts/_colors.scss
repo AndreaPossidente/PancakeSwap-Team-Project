@@ -50,7 +50,7 @@ $gradientViolet2: linear-gradient(#7645d9 0%, #5121b1 100%);
 $gradientVioletAlt: linear-gradient(180deg, #cbd7ef, #9a9fd0);
 $gradientGold: linear-gradient(180deg, #ffd800, #fdab32);
 $gradientBold: linear-gradient(#53dee9, #7645d9);
-$graphBackground: #ffffff80;
+$graphBackground: rgba(255, 255, 255, 0.5);
 
 // dark scheme colors
 $secondary-dark: #9a6aff;
@@ -83,4 +83,4 @@ $gradientViolet-dark: linear-gradient(180deg, #6c4999, #6d4db2);
 $gradientVioletAlt-dark: linear-gradient(180deg, #434575, #66578d);
 $gradientGold-dark: linear-gradient(180deg, #ffd800, #fdab32);
 $gradientBold-dark: linear-gradient(#53dee9, #9a6aff);
-$graphBackground-dark: #27262c80;
+$graphBackground-dark: rgba(39, 38, 44, 0.5);
