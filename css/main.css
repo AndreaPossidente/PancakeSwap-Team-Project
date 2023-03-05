@@ -2263,14 +2263,45 @@ a.trade-hero {
 }
 .header-nav .nav-hidden-opacity {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   top: -50px;
   width: 200vw;
   height: 100vh;
-  z-index: 1110;
-  opacity: 1;
+  z-index: 102;
+  opacity: 0;
   background-color: var(--colors-overlay);
   transition: opacity 0.3s linear;
+}
+.header-nav .options-selection {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  bottom: auto;
+  background-color: var(--colors-backgroundAlt);
+  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
+  padding: 16px;
+  max-height: 0px;
+  overflow: hidden;
+  z-index: 10;
+  border-radius: 4px;
+  opacity: 0;
+  will-change: opacity;
+  pointer-events: none;
+}
+.header-nav .options-selection button {
+  min-height: 32px;
+  height: auto;
+  color: var(--colors-text);
+  padding: 0px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.03em;
 }
 .header-nav .nav-util-js {
   display: inline-block !important;
@@ -2477,6 +2508,20 @@ a.trade-hero {
 .header-nav .nav-desktop .nav-options button {
   margin-right: 8px;
 }
+.header-nav .nav-desktop .nav-language-switcher {
+  position: relative;
+}
+.header-nav .nav-desktop .nav-language-switcher:hover .options-selection {
+  opacity: 1;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: opacity 0.3s ease-in-out 0s;
+  pointer-events: auto;
+  top: 30px;
+}
+.header-nav .nav-desktop .nav-language-switcher:hover .options-selection button:hover {
+  opacity: 0.65;
+}
 .header-nav .nav-desktop .nav-network {
   margin-right: 8px;
   cursor: pointer;
@@ -2555,6 +2600,17 @@ a.trade-hero {
 .header-nav .nav-mobile .nav-top .nav-options button {
   margin-right: 8px;
 }
+.header-nav .nav-mobile .nav-top .nav-language-switcher:hover .options-selection {
+  opacity: 1;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: opacity 0.3s ease-in-out 0s;
+  pointer-events: auto;
+  top: 40px;
+}
+.header-nav .nav-mobile .nav-top .nav-language-switcher:hover .options-selection button:hover {
+  opacity: 0.65;
+}
 .header-nav .nav-mobile .nav-top .nav-network {
   margin-right: 8px;
   cursor: pointer;
@@ -2628,6 +2684,7 @@ a.trade-hero {
   top: -50px;
   width: 200vw;
   height: 100vh;
+  z-index: 100;
 }
 .header-nav .nav-mobile .nav-bottom .nav-bottom-items:hover .nav-hidden-opacity:hover {
   display: none;

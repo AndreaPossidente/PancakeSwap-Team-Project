@@ -5,14 +5,47 @@
 .header-nav {
     .nav-hidden-opacity {
         visibility: hidden;
-        position: absolute;
+        position: fixed;
         top: -50px;
         width: 200vw;
         height: 100vh;
-        z-index: 1110;
-        opacity: 1;
+        z-index: 102;
+        opacity: 0;
         background-color: var(--colors-overlay);
         transition: opacity 0.3s linear;
+    }
+
+    .options-selection {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        transform: translate(-50%);
+        left: 50%;
+        bottom: auto;
+        background-color: var(--colors-backgroundAlt);
+        box-shadow: 0px 2px 12px -8px rgba(25,19,38,.1),0px 1px 1px rgba(25,19,38,.05);
+        padding: 16px;
+        max-height: 0px;
+        overflow: hidden;
+        z-index: 10;
+        border-radius: 4px;
+        opacity: 0;
+        will-change: opacity;
+        pointer-events: none;
+
+        button {
+            min-height: 32px;
+            height: auto;
+            color: var(--colors-text);
+            padding: 0px 8px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+            font-size: 14px;
+            line-height: 1;
+            letter-spacing: 0.03em;
+        }
     }
 
     .nav-util-js {
@@ -261,6 +294,25 @@
                 margin-right: 8px;
 
             }
+
+
+        }
+
+        .nav-language-switcher {
+            position: relative;
+            &:hover {
+                .options-selection {
+                    opacity: 1;
+                    max-height: 400px;
+                    overflow-y: auto;
+                    transition: opacity 0.3s ease-in-out 0s;
+                    pointer-events: auto;
+                    top: 30px;
+                    button:hover{
+                        opacity: 0.65;
+                    }
+                }
+            }
         }
 
         .nav-network {
@@ -356,6 +408,22 @@
                 }
             }
 
+            .nav-language-switcher {
+                &:hover {
+                    .options-selection {
+                        opacity: 1;
+                        max-height: 400px;
+                        overflow-y: auto;
+                        transition: opacity 0.3s ease-in-out 0s;
+                        pointer-events: auto;
+                        top: 40px;
+                        button:hover{
+                            opacity: 0.65;
+                        }
+                    }
+                }
+            }
+
 
             .nav-network {
                 margin-right: 8px;
@@ -439,6 +507,7 @@
                         top: -50px;
                         width: 200vw;
                         height: 100vh;
+                        z-index: 100;
 
                         &:hover {
                             display: none;
