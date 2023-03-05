@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
 /*
       mobile            mobile-first
@@ -920,6 +920,384 @@ p {
 .icon {
   height: 24px;
   width: 24px;
+}
+
+#connect-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  background-color: var(--colors-text99);
+  justify-content: center;
+  align-items: flex-end;
+  transition: opacity 350ms ease;
+  z-index: 99;
+}
+#connect-modal.active {
+  display: flex;
+  opacity: 1;
+}
+@media screen and (min-width: 852px) {
+  #connect-modal {
+    align-items: center;
+  }
+}
+#connect-modal .connect-modal-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+}
+@media screen and (min-width: 852px) {
+  #connect-modal .connect-modal-container {
+    height: 490px;
+  }
+}
+@media screen and (min-width: 852px) {
+  #connect-modal .connect-modal-container {
+    width: 692px;
+  }
+}
+@media screen and (min-width: 968px) {
+  #connect-modal .connect-modal-container {
+    width: 792px;
+  }
+}
+#connect-modal .connect-modal-container .connect-modal-header {
+  position: absolute;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  left: 0;
+  height: 100px;
+  padding: 16px;
+  top: -50px;
+}
+#connect-modal .connect-modal-container .connect-modal-header button {
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0px;
+  outline: 0px;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  padding: 8px;
+  border-radius: 16px 16px 0px 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--colors-backgroundAlt);
+  background-color: var(--colors-textSubtle);
+}
+#connect-modal .connect-modal-container .connect-modal-header button.active {
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0px;
+  outline: 0px;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  padding: 8px;
+  border-radius: 16px 16px 0px 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--colors-textSubtle);
+  background-color: var(--colors-input);
+}
+#connect-modal .connect-modal-container .connect-modal-header button + button {
+  margin-left: 0px;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs {
+  position: relative;
+  display: flex;
+  z-index: 100;
+  width: 100%;
+  background: var(--colors-gradientCardHeader);
+  border-radius: 24px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+@media screen and (min-width: 852px) {
+  #connect-modal .connect-modal-container .connect-modal-tabs {
+    border-radius: 24px;
+  }
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 {
+  position: relative;
+  display: flex;
+  z-index: 100;
+  width: 100%;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left {
+  background: var(--colors-backgroundAlt);
+  border-radius: 24px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  max-width: 100%;
+}
+@media screen and (min-width: 576px) {
+  #connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left {
+    max-width: 360px;
+  }
+}
+@media screen and (min-width: 968px) {
+  #connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left {
+    max-width: 408px;
+  }
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-header {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-header h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-header div {
+  color: var(--colors-textSubtle);
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  font-size: 14px;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets {
+  max-height: 270px;
+  position: relative;
+  display: grid;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  -webkit-column-gap: 8px;
+  column-gap: 8px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media screen and (min-width: 576px) {
+  #connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets {
+    padding-left: 48px;
+    padding-right: 48px;
+    row-gap: 24px;
+    -webkit-column-gap: 16px;
+    column-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 968px) {
+  #connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet {
+  justify-content: flex-start;
+  letter-spacing: normal;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet:hover {
+  opacity: 0.65;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > img {
+  object-fit: contain;
+  max-height: 50px;
+  max-width: 50px;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > div:first-child {
+  border-radius: 12px;
+  padding: 2px;
+  max-height: 54px;
+  max-width: 54px;
+  cursor: pointer;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > div:first-child.hl {
+  background-size: 400% 400%;
+  background: var(--colors-gradientBold);
+  animation: bgGradient 3s ease infinite;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > div:first-child > img {
+  object-fit: contain;
+  max-height: 50px;
+  max-width: 50px;
+  position: relative;
+  width: 100%;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > div:first-child > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  background-color: var(--colors-dropdown);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > div:first-child > div > img {
+  fill: var(--colors-textSubtle);
+  object-fit: contain;
+  max-height: 24px;
+  max-width: 24px;
+  position: relative;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-left .connect-modal-tab1-wallets > .connect-modal-tab1-wallet > div {
+  cursor: pointer;
+  margin-top: 4px;
+  color: var(--colors-text);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 12px;
+  text-align: center;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 24px;
+  margin-right: 24px;
+  flex: 1 1;
+}
+@media screen and (min-width: 576px) {
+  #connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right {
+    display: flex;
+  }
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right > div h1 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--colors-secondary);
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right > div img {
+  max-height: 178px;
+  max-width: 198px;
+  position: relative;
+  width: 100%;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right > div button {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 0px;
+  border-radius: 16px;
+  box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  height: 48px;
+  padding: 0px 24px;
+  background-color: var(--colors-textSubtle);
+  color: var(--colors-backgroundAlt);
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right > div button:hover {
+  text-decoration: underline;
+  opacity: 0.65;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab1 > div.connect-modal-tab1-right > div button svg {
+  fill: var(--colors-backgroundAlt);
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 48px;
+  margin-top: 48px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab2 button {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 0px;
+  border-radius: 16px;
+  box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  opacity: 1;
+  outline: 0px;
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  height: 48px;
+  padding: 0px 24px;
+  background-color: var(--colors-textSubtle);
+  color: var(--colors-backgroundAlt);
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab2 button:hover {
+  text-decoration: underline;
+  opacity: 0.65;
+}
+#connect-modal .connect-modal-container .connect-modal-tabs .connect-modal-tab2 button svg {
+  fill: var(--colors-backgroundAlt);
+}
+
+@keyframes bgGradient {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+.connect-wallet {
+  position: fixed;
+  left: 100px;
+  bottom: 15px;
+  z-index: 90;
 }
 
 body {
