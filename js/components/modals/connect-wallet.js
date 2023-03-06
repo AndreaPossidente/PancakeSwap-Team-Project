@@ -33,3 +33,30 @@ headerBtn2.addEventListener("click", () => {
   tab1.style.display = "none";
   tab2.style.display = "flex";
 });
+
+const page1 = document.querySelector(".connect-swiper-page-1");
+const page2 = document.querySelector(".connect-swiper-page-2");
+const slides = document.querySelectorAll(".connect-swiper-slide");
+const slide1 = slides.item(0);
+const slide2 = slides.item(1);
+
+page1.addEventListener("click", () => {
+  slide1.style.translate = "0px 0px";
+  slide2.style.translate = "100% 0px";
+  page1.classList.add("active");
+  page2.classList.remove("active");
+});
+page2.addEventListener("click", () => {
+  slide1.style.translate = "-100% 0px";
+  slide2.style.translate = "-100% 0px";
+  page2.classList.add("active");
+  page1.classList.remove("active");
+});
+
+setInterval(() => {
+  if (page1.classList.contains("active")) {
+    page2.click();
+  } else {
+    page1.click();
+  }
+}, 5000);
