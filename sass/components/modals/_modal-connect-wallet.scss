@@ -307,8 +307,83 @@
         margin-left: auto;
         margin-right: auto;
         display: none;
-        .swiper {
-          // da implementare
+        width: 100%;
+        .connect-swiper-container {
+          touch-action: pan-y;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          overflow: hidden;
+          list-style: none;
+          padding: 0;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          width: 100%;
+          gap: 24px;
+          .connect-swiper {
+            display: flex;
+            width: 200%;
+            .connect-swiper-slide {
+              width: 100%;
+              transition: translate 300ms ease;
+              .connect-swiper-slide-title {
+                color: var(--colors-secondary);
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.1;
+              }
+              .connect-swiper-slide-img {
+                height: 178px;
+                width: 198px;
+                position: relative;
+                width: 100%;
+                margin: auto;
+                img {
+                  height: 178px;
+                  width: 198px;
+                  object-fit: contain;
+                }
+              }
+              .connect-swiper-slide-description {
+                color: var(--colors-textSubtle);
+                font-weight: 400;
+                line-height: 1.5;
+                margin: auto;
+                max-width: 368px;
+                font-size: 14px;
+              }
+            }
+          }
+          .connect-swiper-pagination {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            > div {
+              cursor: pointer;
+              padding: v.$space-2;
+              > div {
+                background-color: var(--colors-inputSecondary);
+                width: 56px;
+                height: 8px;
+                border-radius: v.$radius-card;
+                &.connect-swiper-page-1 {
+                  border-bottom-right-radius: v.$radius-0;
+                  border-top-right-radius: v.$radius-0;
+                }
+                &.connect-swiper-page-2 {
+                  border-bottom-left-radius: v.$radius-0;
+                  border-top-left-radius: v.$radius-0;
+                }
+                &.active {
+                  background-color: var(--colors-secondary);
+                }
+              }
+            }
+          }
         }
         button {
           display: flex;
