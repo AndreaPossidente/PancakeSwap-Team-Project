@@ -1,6 +1,8 @@
 const connectModalBtn = document.querySelectorAll(".connect-wallet");
 const connectModal = document.querySelector("#connect-modal");
 
+try {
+
 connectModalBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     connectModal.classList.toggle("active");
@@ -60,3 +62,7 @@ setInterval(() => {
     page1.click();
   }
 }, 5000);
+
+} catch (error) {
+  console.log("there is no connect modal in this page");
+}
