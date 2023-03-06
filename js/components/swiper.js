@@ -20,7 +20,7 @@ try {
         ? counter++
         : (counter = 0);
       // simulate a click on the pagination element index of counter
-      swiperPagination.item(counter).click();
+      swiperPagination?.item(counter) && swiperPagination.item(counter).click();
     }, 8000);
   });
 
