@@ -1,8 +1,10 @@
-const connectModalBtn = document.querySelector(".connect-wallet");
+const connectModalBtn = document.querySelectorAll(".connect-wallet");
 const connectModal = document.querySelector("#connect-modal");
 
-connectModalBtn.addEventListener("click", () => {
-  connectModal.classList.toggle("active");
+connectModalBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    connectModal.classList.toggle("active");
+  });
 });
 
 connectModal.addEventListener("click", (e) => {
