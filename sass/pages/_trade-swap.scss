@@ -12,8 +12,10 @@
   opacity: 1;
   transition: opacity 350ms ease-in;
   z-index: 101;
+  visibility: visible;
   @include m.media(xl) {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
