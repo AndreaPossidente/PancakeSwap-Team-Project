@@ -22,3 +22,11 @@
     translate: 3% 1%;
   }
 }
+@keyframes modal-slide-in {
+  0% {
+    max-height: 40vh;
+  }
+  100% {
+    max-height: 90vh;
+  }
+}
