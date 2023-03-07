@@ -6,7 +6,9 @@ export default class CoinGecko {
         })
       : "";
     const resp = await fetch(
-      "https://api.coingecko.com/api/v3/" + endpoint + "?" + params.toString(),
+      "https://api.coingecko.com/api/v3/" +
+        endpoint +
+        (params.toString() !== "" ? "?" + params.toString() : ""),
       {
         method: "GET",
         headers: {
