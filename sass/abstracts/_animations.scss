@@ -30,3 +30,11 @@
     max-height: 90vh;
   }
 }
+@keyframes modal-slide-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

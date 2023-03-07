@@ -1,17 +1,18 @@
 #settings-modal {
-    visibility: hidden;
     position: fixed;
     opacity: 0;
     bottom: -10px;
-    z-index: 9999;
+    z-index: -9999;
     width: 100%;
     border: 1px solid var(--colors-cardBorder);
     box-shadow: rgba(14, 14, 44, 0.1) 0px 20px 36px -8px, rgba(0, 0, 0, 0.05) 0px 1px 1px;
     border-radius: 32px 32px 0px 0px;
     background-color: var(--colors-backgroundAlt);
-
+    
+    
     &.active {
         visibility: visible;
+        z-index: 9999;
         opacity: 1;
         animation: 0.3s ease-in-out 0s 1 normal forwards running modal-slide-in;
     }
@@ -67,6 +68,7 @@
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 24px;
+
                 div {
                     &:first-child {
                         color: var(--colors-text);
