@@ -3290,10 +3290,12 @@ a.trade-hero {
   opacity: 1;
   transition: opacity 350ms ease-in;
   z-index: 101;
+  visibility: visible;
 }
 @media screen and (min-width: 968px) {
   .swap-overlay {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
