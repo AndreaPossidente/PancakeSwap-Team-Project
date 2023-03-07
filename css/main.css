@@ -55,6 +55,7 @@
   }
   100% {
     opacity: 0;
+    z-index: -99999;
   }
 }
 *,
@@ -1332,10 +1333,14 @@ p {
   background-color: var(--colors-backgroundAlt);
 }
 #settings-modal.active {
-  visibility: visible;
   z-index: 9999;
   opacity: 1;
   animation: 0.3s ease-in-out 0s 1 normal forwards running modal-slide-in;
+}
+#settings-modal.deactive {
+  z-index: 9999;
+  opacity: 1;
+  animation: 3s ease-in-out 0s 1 normal forwards running modal-slide-out;
 }
 #settings-modal .settings-modal-container {
   position: relative;

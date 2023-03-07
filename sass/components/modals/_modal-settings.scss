@@ -11,10 +11,15 @@
     
     
     &.active {
-        visibility: visible;
         z-index: 9999;
         opacity: 1;
         animation: 0.3s ease-in-out 0s 1 normal forwards running modal-slide-in;
+    }
+
+    &.deactive {
+        z-index: 9999;
+        opacity: 1;
+        animation: 3s ease-in-out 0s 1 normal forwards running modal-slide-out;
     }
 
 

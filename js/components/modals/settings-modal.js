@@ -9,12 +9,14 @@ function close(element){
     util.forEach((el) => {
         el.addEventListener("click", () => {
             element.classList.remove("active")
+            element.classList.add("deactive")
         })
     });
 }
 
 options.forEach((option) => {
     option.addEventListener("click", () => {
+        modal.classList.remove("deactive")
         modal.classList.toggle("active")
     })
 })
