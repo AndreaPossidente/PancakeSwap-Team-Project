@@ -13,13 +13,14 @@
     &.active {
         z-index: 9999;
         opacity: 1;
-        animation: 0.3s ease-in-out 0s 1 normal forwards running modal-slide-in;
+        animation: 0.3s linear 0s 1 normal forwards running modal-slide-in;
     }
 
     &.deactive {
         z-index: 9999;
-        opacity: 1;
-        animation: 3s ease-in-out 0s 1 normal forwards running modal-slide-out;
+        opacity: 0;
+        max-height: 90vh;
+        animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
     }
 
 
@@ -87,5 +88,22 @@
 
         }
 
+    }
+
+}
+.modal-fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -100;
+    width: 100vw;
+    height: 1000vh;
+    background-color: var(--colors-overlay);
+    &.active{
+        animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
+    }
+    &.deactive{
+        animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
     }
 }

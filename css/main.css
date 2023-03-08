@@ -44,18 +44,30 @@
 @keyframes modal-slide-in {
   0% {
     max-height: 40vh;
+    translate: 0% 0%;
   }
   100% {
+    translate: 0% -2%;
     max-height: 90vh;
   }
 }
 @keyframes modal-slide-out {
   0% {
     opacity: 1;
+    translate: 0% 0%;
   }
   100% {
+    translate: 0% 18%;
+  }
+}
+@keyframes fade-opacity {
+  0% {
     opacity: 0;
-    z-index: -99999;
+    z-index: 100;
+  }
+  100% {
+    z-index: 100;
+    opacity: 0.3;
   }
 }
 *,
@@ -1335,12 +1347,13 @@ p {
 #settings-modal.active {
   z-index: 9999;
   opacity: 1;
-  animation: 0.3s ease-in-out 0s 1 normal forwards running modal-slide-in;
+  animation: 0.3s linear 0s 1 normal forwards running modal-slide-in;
 }
 #settings-modal.deactive {
   z-index: 9999;
-  opacity: 1;
-  animation: 3s ease-in-out 0s 1 normal forwards running modal-slide-out;
+  opacity: 0;
+  max-height: 90vh;
+  animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
 }
 #settings-modal .settings-modal-container {
   position: relative;
@@ -1392,6 +1405,23 @@ p {
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
+}
+
+.modal-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -100;
+  width: 100vw;
+  height: 1000vh;
+  background-color: var(--colors-overlay);
+}
+.modal-fade.active {
+  animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
+}
+.modal-fade.deactive {
+  animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
 }
 
 #trade-chart {
@@ -3125,7 +3155,7 @@ a.trade-hero {
 .header-nav .nav-mobile .nav-top {
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 99;
   height: 56px;
   background-color: var(--colors-backgroundAlt);
   border-bottom: 1px solid var(--colors-cardBorder);
