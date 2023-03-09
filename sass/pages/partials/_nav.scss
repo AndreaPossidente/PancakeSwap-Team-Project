@@ -352,7 +352,7 @@
     .nav-top {
       position: fixed;
       width: 100%;
-      z-index: 100;
+      z-index: 99;
       height: 56px;
       background-color: var(--colors-backgroundAlt);
       border-bottom: 1px solid var(--colors-cardBorder);

@@ -10,11 +10,8 @@ const bubble = document.querySelector(
 const darkIcon = document.querySelector(".color-scheme-switcher .dark-icon");
 const lightIcon = document.querySelector(".color-scheme-switcher .light-icon");
 
-button.style.position = "fixed";
-button.style.left = "20px";
-button.style.bottom = "20px";
+
 // button.innerHTML = "Dark Mode";
-body.append(button);
 
 if (localColorScheme == "dark") {
   root.classList.add("dark");

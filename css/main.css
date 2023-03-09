@@ -41,6 +41,88 @@
     translate: 3% 1%;
   }
 }
+@keyframes modal-slide-in {
+  0% {
+    max-height: 40vh;
+    translate: 0% 0%;
+  }
+  100% {
+    translate: 0% -2%;
+    max-height: 90vh;
+  }
+}
+@keyframes modal-slide-in-central {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes modal-slide-out {
+  0% {
+    opacity: 0.3;
+    translate: 0% 0%;
+  }
+  100% {
+    translate: 0% 100%;
+  }
+}
+@keyframes modal-slide-out-central {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-opacity {
+  0% {
+    opacity: 0;
+    z-index: 100;
+  }
+  100% {
+    z-index: 100;
+    opacity: 0.3;
+  }
+}
+@keyframes fade-opacity-out {
+  0% {
+    z-index: 100;
+    opacity: 0.3;
+  }
+  50% {
+    z-index: 100;
+    opacity: 0;
+  }
+  100% {
+    z-index: -99999;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bubble-slide {
+  0% {
+    translate: 0% 0%;
+  }
+  100% {
+    translate: 100% 0%;
+  }
+}
+@keyframes bubble-slide-left {
+  0% {
+    translate: 100% 0%;
+  }
+  100% {
+    translate: 0% 0%;
+  }
+}
 *,
 *::before,
 *::after {
@@ -1383,6 +1465,154 @@ p {
     background-position: 100% 100%;
   }
 }
+#settings-modal {
+  position: fixed;
+  opacity: 0;
+  bottom: -10px;
+  z-index: -9999;
+  width: 100%;
+  border: 1px solid var(--colors-cardBorder);
+  box-shadow: rgba(14, 14, 44, 0.1) 0px 20px 36px -8px, rgba(0, 0, 0, 0.05) 0px 1px 1px;
+  border-radius: 32px 32px 0px 0px;
+  background-color: var(--colors-backgroundAlt);
+}
+@media screen and (min-width: 576px) {
+  #settings-modal {
+    width: 485px;
+    height: 500px;
+    left: calc(50vw - 242.5px);
+    top: calc(50vh - 250px);
+    border-radius: 32px;
+  }
+}
+#settings-modal.active {
+  z-index: 9999;
+  opacity: 1;
+  animation: 0.3s linear 0s 1 normal forwards running modal-slide-in;
+}
+@media screen and (min-width: 576px) {
+  #settings-modal.active {
+    opacity: 0;
+    animation: 0.3s cubic-bezier(0.77, 0, 0.18, 1) 0s 1 normal forwards running modal-slide-in-central;
+  }
+}
+#settings-modal.deactive {
+  z-index: 9999;
+  opacity: 0;
+  max-height: 90vh;
+  animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
+}
+@media screen and (min-width: 576px) {
+  #settings-modal.deactive {
+    opacity: 1;
+    animation: 0.3s cubic-bezier(0.77, 0, 0.18, 1) 0s 1 normal forwards running modal-slide-out-central;
+  }
+}
+#settings-modal .settings-modal-container {
+  position: relative;
+  max-height: 90vh;
+  min-height: 300px;
+  color: var(--colors-text);
+}
+#settings-modal .settings-modal-container .settings-modal-header {
+  border-bottom: 1px solid var(--colors-cardBorder);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+}
+#settings-modal .settings-modal-container .settings-modal-header h4 {
+  flex-grow: 1;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+#settings-modal .settings-modal-container .settings-modal-header button {
+  background: none;
+  border: none;
+  height: 48px;
+  cursor: pointer;
+}
+#settings-modal .settings-modal-container .settings-modal-header button svg path {
+  fill: var(--colors-primary);
+}
+#settings-modal .settings-modal-container .settings-modal-main {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-categories {
+  color: var(--colors-secondary);
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve {
+  background-color: var(--colors-input);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve.active {
+  background-color: var(--colors-success);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve.deactive {
+  background-color: var(--colors-input);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve .color-scheme-switcher-bubble {
+  height: 26px;
+  background-color: var(--colors-backgroundAlt);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve .color-scheme-switcher-bubble.active {
+  animation: 0.1s linear 0s 1 normal forwards running bubble-slide;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve .color-scheme-switcher-bubble.deactive {
+  animation: 0.1s linear 0s 1 normal forwards running bubble-slide-left;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options div:first-child {
+  color: var(--colors-text);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child {
+  flex-flow: column;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child div:last-child {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child button {
+  border-radius: 16px;
+  line-height: 1;
+  height: 32px;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child button.deactive {
+  background-color: var(--colors-tertiary);
+  color: var(--colors-primary);
+}
+
+.modal-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100vw;
+  height: 1000vh;
+  background-color: var(--colors-overlay);
+}
+.modal-fade.active {
+  animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
+}
+.modal-fade.deactive {
+  animation: 0.3s linear 0s 1 normal forwards running fade-opacity-out;
+}
+
 #trade-chart {
   height: 320px;
   width: 100%;
@@ -3114,7 +3344,7 @@ a.trade-hero {
 .header-nav .nav-mobile .nav-top {
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 99;
   height: 56px;
   background-color: var(--colors-backgroundAlt);
   border-bottom: 1px solid var(--colors-cardBorder);
