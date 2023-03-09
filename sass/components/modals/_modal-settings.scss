@@ -1,3 +1,7 @@
+@use "../../abstracts/colors" as c;
+@use "../../abstracts/mixins" as m;
+@use "../../abstracts/variables" as v;
+
 #settings-modal {
     position: fixed;
     opacity: 0;
@@ -8,12 +12,26 @@
     box-shadow: rgba(14, 14, 44, 0.1) 0px 20px 36px -8px, rgba(0, 0, 0, 0.05) 0px 1px 1px;
     border-radius: 32px 32px 0px 0px;
     background-color: var(--colors-backgroundAlt);
+
+    @include m.media(md){
+        width: 485px;
+        height: 500px;
+        left: calc(100vw / 2 - 485px / 2);
+        top: calc(100vh / 2 - 500px / 2);
+        border-radius: 32px;
+        
+
+    }
     
     
     &.active {
         z-index: 9999;
         opacity: 1;
         animation: 0.3s linear 0s 1 normal forwards running modal-slide-in;
+        @include m.media(md){
+            opacity: 0;
+            animation: 0.3s cubic-bezier(.77,0,.18,1) 0s 1 normal forwards running modal-slide-in-central;
+        }
     }
 
     &.deactive {
@@ -21,6 +39,10 @@
         opacity: 0;
         max-height: 90vh;
         animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
+        @include m.media(md){
+            opacity: 1;
+            animation: 0.3s cubic-bezier(.77,0,.18,1) 0s 1 normal forwards running modal-slide-out-central;
+        }
     }
 
 
@@ -96,7 +118,6 @@
     top: 0;
     left: 0;
     opacity: 0;
-    z-index: -100;
     width: 100vw;
     height: 1000vh;
     background-color: var(--colors-overlay);
@@ -104,6 +125,6 @@
         animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
     }
     &.deactive{
-        animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
+        animation: 0.3s linear 0s 1 normal forwards running fade-opacity-out;
     }
 }

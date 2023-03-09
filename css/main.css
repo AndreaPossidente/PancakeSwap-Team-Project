@@ -51,13 +51,29 @@
     max-height: 90vh;
   }
 }
+@keyframes modal-slide-in-central {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes modal-slide-out {
   0% {
-    opacity: 1;
+    opacity: 0.3;
     translate: 0% 0%;
   }
   100% {
-    translate: 0% 18%;
+    translate: 0% 100%;
+  }
+}
+@keyframes modal-slide-out-central {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes fade-opacity {
@@ -68,6 +84,27 @@
   100% {
     z-index: 100;
     opacity: 0.3;
+  }
+}
+@keyframes fade-opacity-out {
+  0% {
+    z-index: 100;
+    opacity: 0.3;
+  }
+  50% {
+    z-index: 100;
+    opacity: 0;
+  }
+  100% {
+    z-index: -99999;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 *,
@@ -1344,16 +1381,37 @@ p {
   border-radius: 32px 32px 0px 0px;
   background-color: var(--colors-backgroundAlt);
 }
+@media screen and (min-width: 576px) {
+  #settings-modal {
+    width: 485px;
+    height: 500px;
+    left: calc(50vw - 242.5px);
+    top: calc(50vh - 250px);
+    border-radius: 32px;
+  }
+}
 #settings-modal.active {
   z-index: 9999;
   opacity: 1;
   animation: 0.3s linear 0s 1 normal forwards running modal-slide-in;
+}
+@media screen and (min-width: 576px) {
+  #settings-modal.active {
+    opacity: 0;
+    animation: 0.3s cubic-bezier(0.77, 0, 0.18, 1) 0s 1 normal forwards running modal-slide-in-central;
+  }
 }
 #settings-modal.deactive {
   z-index: 9999;
   opacity: 0;
   max-height: 90vh;
   animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
+}
+@media screen and (min-width: 576px) {
+  #settings-modal.deactive {
+    opacity: 1;
+    animation: 0.3s cubic-bezier(0.77, 0, 0.18, 1) 0s 1 normal forwards running modal-slide-out-central;
+  }
 }
 #settings-modal .settings-modal-container {
   position: relative;
@@ -1412,7 +1470,6 @@ p {
   top: 0;
   left: 0;
   opacity: 0;
-  z-index: -100;
   width: 100vw;
   height: 1000vh;
   background-color: var(--colors-overlay);
@@ -1421,7 +1478,7 @@ p {
   animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
 }
 .modal-fade.deactive {
-  animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
+  animation: 0.3s linear 0s 1 normal forwards running fade-opacity-out;
 }
 
 #trade-chart {
