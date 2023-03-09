@@ -1217,11 +1217,11 @@
         </div>
         <div class="settings-modal-options">
           <div>Subgraph Health Indicator</div>
-          <div class="color-scheme-switcher">
+          <div class="color-scheme-switcher preserve deactive">
             <div class="color-scheme-switcher-bg">
               <div></div>
             </div>
-            <div class="color-scheme-switcher-bubble">
+            <div class="color-scheme-switcher-bubble deactive">
               <div style="width: 20px; height: 20px;"></div>
               <div class="dark-icon">
               </div>
@@ -1230,24 +1230,24 @@
         </div>
         <div class="settings-modal-options">
           <div>Show username</div>
-          <div class="color-scheme-switcher">
+          <div class="color-scheme-switcher preserve deactive">
             <div class="color-scheme-switcher-bg">
               <div></div>
             </div>
-            <div class="color-scheme-switcher-bubble">
+            <div class="color-scheme-switcher-bubble deactive">
               <div style="width: 20px; height: 20px;"></div>
               <div class="dark-icon">
-              </div>
+              </div> 
             </div>
           </div>
         </div>
         <div class="settings-modal-options">
           <div>Token Risk Scanning</div>
-          <div class="color-scheme-switcher">
+          <div class="color-scheme-switcher preserve active">
             <div class="color-scheme-switcher-bg">
               <div></div>
             </div>
-            <div class="color-scheme-switcher-bubble">
+            <div class="color-scheme-switcher-bubble active">
               <div style="width: 20px; height: 20px;"></div>
               <div class="dark-icon">
               </div>
@@ -1256,7 +1256,12 @@
         </div>
         <div class="settings-modal-options">
           <div>Default Transaction Speed (GWEI)</div>
-          <div>dd</div>
+          <div>
+            <button class="btn">Default</button>
+            <button class="btn deactive">Standard (5)</button>
+            <button class="btn deactive">Fast (6)</button>
+            <button class="btn deactive">instant (7)</button>
+          </div>
         </div>
       </div>
     </div>

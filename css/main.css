@@ -107,6 +107,22 @@
     opacity: 1;
   }
 }
+@keyframes bubble-slide {
+  0% {
+    translate: 0% 0%;
+  }
+  100% {
+    translate: 100% 0%;
+  }
+}
+@keyframes bubble-slide-left {
+  0% {
+    translate: 100% 0%;
+  }
+  100% {
+    translate: 0% 0%;
+  }
+}
 *,
 *::before,
 *::after {
@@ -1458,11 +1474,47 @@ p {
   justify-content: space-between;
   margin-bottom: 24px;
 }
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve {
+  background-color: var(--colors-input);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve.active {
+  background-color: var(--colors-success);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve.deactive {
+  background-color: var(--colors-input);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve .color-scheme-switcher-bubble {
+  height: 26px;
+  background-color: var(--colors-backgroundAlt);
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve .color-scheme-switcher-bubble.active {
+  animation: 0.1s linear 0s 1 normal forwards running bubble-slide;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options .color-scheme-switcher.preserve .color-scheme-switcher-bubble.deactive {
+  animation: 0.1s linear 0s 1 normal forwards running bubble-slide-left;
+}
 #settings-modal .settings-modal-container .settings-modal-main .settings-modal-options div:first-child {
   color: var(--colors-text);
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child {
+  flex-flow: column;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child div:last-child {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child button {
+  border-radius: 16px;
+  line-height: 1;
+  height: 32px;
+}
+#settings-modal .settings-modal-container .settings-modal-main .settings-modal-options:last-child button.deactive {
+  background-color: var(--colors-tertiary);
+  color: var(--colors-primary);
 }
 
 .modal-fade {

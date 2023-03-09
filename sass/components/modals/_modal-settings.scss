@@ -13,24 +13,25 @@
     border-radius: 32px 32px 0px 0px;
     background-color: var(--colors-backgroundAlt);
 
-    @include m.media(md){
+    @include m.media(md) {
         width: 485px;
         height: 500px;
         left: calc(100vw / 2 - 485px / 2);
         top: calc(100vh / 2 - 500px / 2);
         border-radius: 32px;
-        
+
 
     }
-    
-    
+
+
     &.active {
         z-index: 9999;
         opacity: 1;
         animation: 0.3s linear 0s 1 normal forwards running modal-slide-in;
-        @include m.media(md){
+
+        @include m.media(md) {
             opacity: 0;
-            animation: 0.3s cubic-bezier(.77,0,.18,1) 0s 1 normal forwards running modal-slide-in-central;
+            animation: 0.3s cubic-bezier(.77, 0, .18, 1) 0s 1 normal forwards running modal-slide-in-central;
         }
     }
 
@@ -39,9 +40,10 @@
         opacity: 0;
         max-height: 90vh;
         animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
-        @include m.media(md){
+
+        @include m.media(md) {
             opacity: 1;
-            animation: 0.3s cubic-bezier(.77,0,.18,1) 0s 1 normal forwards running modal-slide-out-central;
+            animation: 0.3s cubic-bezier(.77, 0, .18, 1) 0s 1 normal forwards running modal-slide-out-central;
         }
     }
 
@@ -96,6 +98,25 @@
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 24px;
+                .color-scheme-switcher.preserve{
+                    background-color: var(--colors-input);
+                    &.active{
+                        background-color: var(--colors-success);
+                    }
+                    &.deactive{
+                        background-color: var(--colors-input);
+                    }
+                    .color-scheme-switcher-bubble{
+                        height: 26px;
+                        background-color: var(--colors-backgroundAlt);
+                        &.active{
+                            animation: 0.1s linear 0s 1 normal forwards running bubble-slide;
+                        }
+                        &.deactive{
+                            animation: 0.1s linear 0s 1 normal forwards running bubble-slide-left;
+                        }
+                    }
+                }
 
                 div {
                     &:first-child {
@@ -103,6 +124,26 @@
                         font-weight: 400;
                         line-height: 1.5;
                         font-size: 16px;
+                    }
+                }
+
+                &:last-child {
+                    flex-flow: column;
+
+                    div:last-child {
+                        margin-top: 16px;
+                        display: flex;
+                        justify-content: space-around;
+                    }
+
+                    button {
+                        border-radius: 16px;
+                        line-height: 1;
+                        height: 32px;
+                        &.deactive {
+                            background-color: var(--colors-tertiary);
+                            color: var(--colors-primary);
+                        }
                     }
                 }
             }
@@ -113,7 +154,8 @@
     }
 
 }
-.modal-fade{
+
+.modal-fade {
     position: fixed;
     top: 0;
     left: 0;
@@ -121,10 +163,12 @@
     width: 100vw;
     height: 1000vh;
     background-color: var(--colors-overlay);
-    &.active{
+
+    &.active {
         animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
     }
-    &.deactive{
+
+    &.deactive {
         animation: 0.3s linear 0s 1 normal forwards running fade-opacity-out;
     }
 }
