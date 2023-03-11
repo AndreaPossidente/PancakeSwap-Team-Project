@@ -1,12 +1,15 @@
 import MarketChart from "../models/MarketChart.js";
 import { localColorScheme } from "../utils/handleColorScheme.js";
 import { reduceData } from "../utils/algorithms.js";
+
 import {
   formatAMPM,
   customDateFormat,
   monthName,
 } from "../utils/customDateFormat.js";
 import Coin from "../models/Coin.js";
+
+import SwapPanel from "./swap-panel.js";
 
 const drawChart = async (tok, cur) => {
   try {
@@ -27,7 +30,7 @@ const drawChart = async (tok, cur) => {
     const { createChart } = window.LightweightCharts;
     const chartEl = document.querySelector("#trade-chart");
     const headerTokensEl = document.querySelector(".swap-chart-header-tokens");
-    const swapBtnEl = document.querySelector(".swap-btn-swap");
+    const swapBtnEl = document.querySelectorAll(".swap-btn-swap");
     const swapZoomEl = document.querySelector(".swap-btn-zoom");
     const swapContainerEl = document.querySelector(".swap-container");
     const subHeaderDateEl = document.querySelector(
@@ -135,6 +138,35 @@ const drawChart = async (tok, cur) => {
           icon1.src = token.image;
           icon2.src = currency.image;
         }
+        isInverted
+          ? SwapPanel.updatePanel(
+              {
+                image: currency.image,
+                name: currency.symbol.toUpperCase(),
+              },
+              {
+                image: token.image,
+                name: token.symbol.toUpperCase(),
+              },
+              isInverted,
+              newData[newData.length - 1].value,
+              token.id,
+              currency.id
+            )
+          : SwapPanel.updatePanel(
+              {
+                image: token.image,
+                name: token.symbol.toUpperCase(),
+              },
+              {
+                image: currency.image,
+                name: currency.symbol.toUpperCase(),
+              },
+              isInverted,
+              newData[newData.length - 1].value,
+              token.id,
+              currency.id
+            );
 
         const headerTokensText = isInverted
           ? `${currency.symbol.toUpperCase()}/${token.symbol.toUpperCase()}`
@@ -238,10 +270,14 @@ const drawChart = async (tok, cur) => {
       chart.timeScale().fitContent();
     };
 
-    swapBtnEl.addEventListener("click", () => {
-      isInverted = !isInverted ? true : false;
-      updateChart(isInverted, options.days, options.interval);
-      chart.timeScale().fitContent();
+    await SwapPanel.init();
+
+    swapBtnEl.forEach((btnSwap) => {
+      btnSwap.addEventListener("click", (e) => {
+        isInverted = !isInverted ? true : false;
+        updateChart(isInverted, options.days, options.interval);
+        chart.timeScale().fitContent();
+      });
     });
 
     swapZoomEl.addEventListener("click", () => {
