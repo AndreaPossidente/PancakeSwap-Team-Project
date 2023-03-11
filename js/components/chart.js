@@ -8,8 +8,7 @@ import {
   monthName,
 } from "../utils/customDateFormat.js";
 import Coin from "../models/Coin.js";
-
-import SwapPanel from "./swap-panel.js";
+import SwapPanel from "./SwapPanel.js";
 
 const drawChart = async (tok, cur) => {
   try {
