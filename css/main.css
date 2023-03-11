@@ -3577,6 +3577,7 @@ main:has(.swap-wrapper) {
   background: none;
   max-width: 100%;
   z-index: 101;
+  min-height: 100vh;
 }
 @media screen and (min-width: 968px) {
   .swap-wrapper {
@@ -3641,8 +3642,8 @@ main:has(.swap-wrapper) {
 }
 .swap-wrapper .swap-container > div .swap-chart-container {
   z-index: 102;
-  position: absolute;
-  left: -24px;
+  position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
   border-radius: 16px;
@@ -3651,8 +3652,7 @@ main:has(.swap-wrapper) {
   padding-top: 8px;
   background: var(--colors-backgroundAlt);
   border: 1px solid var(--colors-cardBorder);
-  height: 516px;
-  width: calc(100% + 48px);
+  height: 70%;
   transition: height 200ms ease-in;
   padding-bottom: 55px;
 }
@@ -3662,10 +3662,9 @@ main:has(.swap-wrapper) {
     left: 0;
     bottom: 0;
     position: relative;
-    height: 70%;
+    height: 516px;
     overflow: unset;
     border-radius: 32px;
-    width: 100%;
     padding-top: 36px;
     padding-top: 8px;
     border-radius: 16px;
