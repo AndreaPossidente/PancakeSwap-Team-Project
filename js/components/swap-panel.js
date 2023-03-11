@@ -95,7 +95,7 @@ export default class SwapPanel {
         Number(e.target.value) *
         Number(
           SwapPanel.prices[
-            !this.isInverted ? SwapPanel.tokenId : SwapPanel.currencyId
+            this.isInverted ? SwapPanel.tokenId : SwapPanel.currencyId
           ].usd
         )
       ).toFixed(2)} USD`;
@@ -103,7 +103,7 @@ export default class SwapPanel {
         Number(e.target.value) *
         Number(
           SwapPanel.prices[
-            !this.isInverted ? SwapPanel.tokenId : SwapPanel.currencyId
+            this.isInverted ? SwapPanel.tokenId : SwapPanel.currencyId
           ].usd
         )
       ).toFixed(2)} USD`;
