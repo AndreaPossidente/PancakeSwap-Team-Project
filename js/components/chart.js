@@ -9,22 +9,21 @@ import {
 import Coin from "../models/Coin.js";
 
 const drawChart = async (tok, cur) => {
-  const coins = await Coin.find();
-
-  const token = coins.find((coin) => coin.symbol === tok);
-  const currency = coins.find((coin) => coin.symbol === cur);
-
-  const iconsEl = document.querySelectorAll(".swap-chart-header-icons > img");
-  const icon1 = iconsEl.item(0);
-  const icon2 = iconsEl.item(1);
-
-  currency.image = await currency.image();
-  token.image = await token.image();
-
-  icon1.src = token.image;
-  icon2.src = currency.image;
-
   try {
+    const iconsEl = document.querySelectorAll(".swap-chart-header-icons > img");
+    const icon1 = iconsEl.item(0);
+    const icon2 = iconsEl.item(1);
+
+    const coins = await Coin.find();
+    const token = coins.find((coin) => coin.symbol === tok);
+    const currency = coins.find((coin) => coin.symbol === cur);
+
+    currency.image = await currency.image();
+    token.image = await token.image();
+
+    icon1.src = token.image;
+    icon2.src = currency.image;
+
     const { createChart } = window.LightweightCharts;
     const chartEl = document.querySelector("#trade-chart");
     const headerTokensEl = document.querySelector(".swap-chart-header-tokens");
