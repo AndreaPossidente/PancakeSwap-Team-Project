@@ -1,15 +1,26 @@
 const connectModalBtn = document.querySelectorAll(".connect-wallet");
 const connectModal = document.querySelector("#connect-modal");
-
+const main = document.querySelector("main");
 try {
   connectModalBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       connectModal.classList.toggle("active");
+      if (connectModal.classList.contains("active")) {
+        main.style.zIndex = "-1";
+      } else {
+        main.style.zIndex = "101";
+      }
     });
   });
 
   connectModal.addEventListener("click", (e) => {
     if (e.target === connectModal) connectModal.classList.toggle("active");
+
+    if (connectModal.classList.contains("active")) {
+      main.style.zIndex = "-1";
+    } else {
+      main.style.zIndex = "101";
+    }
   });
 
   const headerBtn1 = document.querySelector(
@@ -62,5 +73,5 @@ try {
     }
   }, 5000);
 } catch (error) {
-  console.log("there is no connect modal in this page");
+  console.warn("there is no connect modal in this page");
 }
