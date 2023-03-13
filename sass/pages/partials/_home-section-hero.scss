@@ -215,6 +215,7 @@ a.trade-hero {
   height: auto;
   max-width: 100%;
   animation: move-diagonal ease-in-out 3s infinite;
+  z-index: 1;
 }
 
 .hero-star-1,
@@ -228,7 +229,7 @@ a.trade-hero {
 
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
- 
+  z-index: 1;
 }
 
 .hero-star-1 {
@@ -258,6 +259,22 @@ a.trade-hero {
   height: auto;
 
   animation: fade-in-out-3 2.5s infinite;
+}
+
+/*============= Hero Svg Path =============*/
+
+.kaMvqP {
+  position: absolute;
+  width: 100%;
+  bottom: -3px;
+  z-index: -1;
+}
+.sc-4ba21b47-0 {
+  display: block;
+  fill: var(--colors-text);
+}
+.IIbzK {
+  fill: var(--colors-text);
 }
 
 /*============= Hero Media Queries =============*/
