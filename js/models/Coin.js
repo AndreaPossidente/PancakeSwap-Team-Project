@@ -8,8 +8,12 @@ export default class Coin {
   }
 
   static async find() {
-    const data = await CoinGecko.query("coins/list");
-    return data.map((el) => new Coin(el));
+    try {
+      const data = await CoinGecko.query("coins/list").catch((err) => err);
+      return data.map((el) => new Coin(el));
+    } catch (err) {
+      return await fetch("/js/components/dummy/coins.json");
+    }
   }
 
   image = async () => {

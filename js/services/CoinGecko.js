@@ -10,13 +10,16 @@ export default class CoinGecko {
         endpoint +
         (params.toString() !== "" ? "?" + params.toString() : ""),
       {
+        requiredStatus: "ok",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
       }
-    );
+    ).catch((err) => {
+      throw new Error("API Limit Reached");
+    });
     const json = await resp.json();
 
     return json;

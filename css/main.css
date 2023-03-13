@@ -3655,35 +3655,15 @@ a.trade-hero {
   width: 100%;
   height: 100%;
   background-color: var(--colors-text99);
-  opacity: 1;
   transition: opacity 350ms ease-in;
-  z-index: 101;
+  opacity: 0;
+  z-index: -1;
   visibility: visible;
 }
-@media screen and (min-width: 968px) {
-  .swap-overlay {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.swap-overlay-small {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--colors-text99);
+.swap-overlay.visible {
   opacity: 1;
-  transition: opacity 350ms ease-in;
-  z-index: 101;
   visibility: visible;
-}
-@media screen and (min-width: 968px) {
-  .swap-overlay-small {
-    opacity: 0;
-    visibility: hidden;
-  }
+  z-index: 101;
 }
 
 main:has(.swap-wrapper) {
@@ -3745,6 +3725,7 @@ main:has(.swap-wrapper) {
   height: calc(100vh - 220px) !important;
 }
 .swap-wrapper .swap-container > div {
+  flex-direction: row-reverse;
   z-index: 102;
   width: 328px;
   height: calc(100vh - 70px);
@@ -3768,7 +3749,7 @@ main:has(.swap-wrapper) {
   }
 }
 .swap-wrapper .swap-container > div .swap-chart-container {
-  z-index: 102;
+  z-index: 104;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -3797,6 +3778,9 @@ main:has(.swap-wrapper) {
     border-radius: 16px;
     width: 50%;
   }
+}
+.swap-wrapper .swap-container > div .swap-chart-container.hidden {
+  left: -2000px;
 }
 .swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header {
   z-index: 102;
@@ -3834,6 +3818,24 @@ main:has(.swap-wrapper) {
   line-height: 1.5;
   font-size: 16px;
 }
+.swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div .swap-zoom-btn {
+  display: none;
+}
+@media screen and (min-width: 968px) {
+  .swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div .swap-zoom-btn {
+    display: block;
+  }
+}
+.swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div .swap-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 968px) {
+  .swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div .swap-close-btn {
+    display: none;
+  }
+}
 .swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div > button {
   z-index: 102;
   position: relative;
@@ -3863,13 +3865,7 @@ main:has(.swap-wrapper) {
 .swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div > button > svg {
   z-index: 102;
   align-self: center;
-  fill: var(--colors-primary);
-  flex-shrink: 0;
-  margin-left: 6px;
-}
-.swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header > div > button > svg.swap-btn-zoom {
-  z-index: 102;
-  align-self: center;
+  justify-self: center;
   fill: var(--colors-text);
   flex-shrink: 0;
 }

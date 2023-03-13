@@ -7,6 +7,9 @@ export default class SwapPanel {
   static #chart = document.querySelector(".swap-chart-container");
   static #toggleChart = document.querySelector("#toggle-chart");
   static #toggleChartIcon = document.querySelectorAll("#toggle-chart > svg");
+  static #toggleChartIconInChart = document.querySelector(".swap-close-btn");
+  static #overlay = document.querySelector(".swap-overlay");
+  // static #overlaySmall = document.querySelector(".swap-overlay-small");
   static #lastPrice = 0;
   static #isInverted = false;
   static #tokenId = "cake";
@@ -22,23 +25,16 @@ export default class SwapPanel {
   static #labels = document.querySelectorAll(
     ".swap-panel-currency-form-input-sub"
   );
+
   /**
    * Initializes the swap panel by adding event listeners, etc.
    * @returns {Promise<void>}
    */
   static async init() {
-    this.#toggleChart.addEventListener("click", () => {
-      const [token1Image, token2Image] = this.#toggleChartIcon;
-      if (!token1Image.classList.contains("hidden")) {
-        token1Image.classList.add("hidden");
-        token2Image.classList.remove("hidden");
-        this.#chart.style.cssText = "position: fixed; left: -2000px;";
-      } else {
-        token1Image.classList.remove("hidden");
-        token2Image.classList.add("hidden");
-        this.#chart.style.cssText = "position: static; left: '';";
-      }
-    });
+    this.#toggleChart.addEventListener("click", () => this.#toggle());
+    this.#toggleChartIconInChart.addEventListener("click", () =>
+      this.#toggle()
+    );
 
     const [input1, input2] = this.#inputs;
 
@@ -51,6 +47,46 @@ export default class SwapPanel {
       "input",
       async (e) => await this.#handleInput(e.target, 1, !this.#isInverted)
     );
+
+    window.addEventListener("resize", () => {
+      if (this.#chart.style?.left === "-2000px") {
+        this.#overlay.classList.remove("visible");
+        // this.#overlaySmall.classList.remove("visible");
+      } else {
+        if (window.innerWidth >= 968) {
+          this.#overlay.classList.remove("visible");
+          // this.#overlaySmall.classList.remove("visible");
+        } else {
+          this.#overlay.classList.add("visible");
+          // this.#overlaySmall.classList.add("visible");
+        }
+      }
+    });
+  }
+
+  static #toggle() {
+    const [token1Image, token2Image] = this.#toggleChartIcon;
+    if (!token1Image.classList.contains("hidden")) {
+      token1Image.classList.add("hidden");
+      token2Image.classList.remove("hidden");
+      this.#chart.classList.add("hidden");
+    } else {
+      token1Image.classList.remove("hidden");
+      token2Image.classList.add("hidden");
+      this.#chart.classList.remove("hidden");
+    }
+    if (this.#chart.style?.left === "-2000px") {
+      this.#overlay.classList.remove("visible");
+      // this.#overlaySmall.classList.remove("visible");
+    } else {
+      if (window.innerWidth > 968) {
+        this.#overlay.classList.remove("visible");
+        // this.#overlaySmall.classList.remove("visible");
+      } else {
+        this.#overlay.classList.add("visible");
+        // this.#overlaySmall.classList.add("visible");
+      }
+    }
   }
 
   static async #handleInput(input, inputId, isInverted) {
