@@ -3,6 +3,7 @@
 @use "../../abstracts/variables" as v;
 
 .trade-section {
+    background: var(--colors-background);
     .container {
         display: flex;
         flex-flow: column;

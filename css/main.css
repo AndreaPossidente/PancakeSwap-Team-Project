@@ -3075,6 +3075,9 @@ a.trade-hero {
     font-size: 20px;
   }
 }
+.trade-section {
+  background: var(--colors-background);
+}
 .trade-section .container {
   display: flex;
   flex-flow: column;
