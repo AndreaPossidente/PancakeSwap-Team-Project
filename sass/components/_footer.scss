@@ -1,0 +1,115 @@
+.footer-container{
+    background-color: rgb(37, 37, 37);
+    padding: 56px 40px 32px;
+    height: 100vh;
+
+    .footer-div-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:start;
+
+    .footer-ul{
+        color: #7645d9;
+        list-style:none;
+    }
+
+    .footer-li{
+        padding:3px;
+    }
+
+    .footer-link {
+        color: aliceblue;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: #ffb237;
+        }
+    }
+
+    .footer-logo{
+        width: 160px;
+        height: auto;
+    }
+
+}
+    .social-footer-div hr{
+        border: 0.5px solid rgb(99, 99, 99);
+        width: 86%;
+        transform: translateX(9%);
+    }
+    
+    .footer-social-logo{
+        width: 20px;
+        margin:30px 20px 20px 0px;
+        transform: translateX(100px);
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .lista{
+        display:none;
+        transform: translateX(145px) translateY(-390px);
+        z-index: 2;
+        background-color: rgb(37, 37, 37);
+        animation-name: opacity;
+        animation-duration: 0.3s;
+
+        .telegram-list{
+            color: rgb(99, 99, 99);
+
+            @keyframes opacity {
+                0% {opacity: 0;}
+                12.5% {opacity: 0.125;}
+                25% {opacity: 0.25;}
+                37.5% {opacity: 0.375;}
+                50% {opacity: 0.5;}
+                62.5% {opacity: 0.625;}
+                75% {opacity: 0.75;}
+                87.5% {opacity: 0.875;}
+                100% {opacity: 1;}
+            }
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .language-footer-select-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transform: translateX(200px) translateY(30px);
+    }
+
+    #language-footer-svg{
+        width:20px;
+    }
+
+    .language-footer-p{
+        color: rgb(99, 99, 99);
+        transform: translateY(-4px);
+    }
+
+    .language-select{
+        display: none;
+        z-index: 2;
+        background-color: rgb(37, 37, 37);
+        animation-name: opacity;
+        animation-duration: 0.3s;
+        text-align: center;
+        padding-right: 10px;
+        color:rgb(99, 99, 99)
+    }
+
+    .language-list:hover{
+        text-decoration: underline;
+        color:rgb(124, 124, 124)
+    }
+}

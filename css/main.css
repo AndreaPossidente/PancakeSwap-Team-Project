@@ -1633,6 +1633,120 @@ p {
   padding: 16px;
 }
 
+.footer-container {
+  background-color: rgb(37, 37, 37);
+  padding: 56px 40px 32px;
+}
+.footer-container .footer-div-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+}
+.footer-container .footer-div-container .footer-ul {
+  color: #7645d9;
+  list-style: none;
+}
+.footer-container .footer-div-container .footer-li {
+  padding: 3px;
+}
+.footer-container .footer-div-container .footer-link {
+  color: aliceblue;
+}
+.footer-container .footer-div-container .footer-link:hover {
+  text-decoration: underline;
+}
+.footer-container .footer-div-container .footer-link:visited {
+  color: #ffb237;
+}
+.footer-container .footer-div-container .footer-logo {
+  width: 160px;
+  height: auto;
+}
+.footer-container .social-footer-div hr {
+  border: 0.5px solid rgb(99, 99, 99);
+  width: 86%;
+  transform: translateX(9%);
+}
+.footer-container .footer-social-logo {
+  width: 20px;
+  margin: 30px 20px 20px 0px;
+  transform: translateX(100px);
+}
+.footer-container .footer-social-logo:hover {
+  cursor: pointer;
+}
+.footer-container .lista {
+  display: none;
+  transform: translateX(145px) translateY(-390px);
+  z-index: 2;
+  background-color: rgb(37, 37, 37);
+  animation-name: opacity;
+  animation-duration: 0.3s;
+}
+.footer-container .lista .telegram-list {
+  color: rgb(99, 99, 99);
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 0.125;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  37.5% {
+    opacity: 0.375;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  62.5% {
+    opacity: 0.625;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  87.5% {
+    opacity: 0.875;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.footer-container .lista .telegram-list:hover {
+  text-decoration: underline;
+}
+.footer-container .language-footer-select-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transform: translateX(200px) translateY(30px);
+}
+.footer-container #language-footer-svg {
+  width: 20px;
+}
+.footer-container .language-footer-p {
+  color: rgb(99, 99, 99);
+  transform: translateY(-4px);
+}
+.footer-container .language-select {
+  display: block;
+  z-index: 2;
+  background-color: rgb(37, 37, 37);
+  animation-name: opacity;
+  animation-duration: 0.3s;
+  text-align: center;
+  padding-right: 10px;
+  color: rgb(99, 99, 99);
+}
+.footer-container .language-list:hover {
+  text-decoration: underline;
+  color: rgb(124, 124, 124);
+}
+
 body {
   font-family: Kanit, sans-serif;
   font-weight: 600;
