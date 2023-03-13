@@ -1,7 +1,12 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+
 .footer-container{
     background-color: rgb(37, 37, 37);
     padding: 56px 40px 32px;
-    height: 100vh;
+    height: 60vh;
 
     .footer-div-container{
     display: flex;

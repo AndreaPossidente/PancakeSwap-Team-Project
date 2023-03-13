@@ -1636,6 +1636,7 @@ p {
 .footer-container {
   background-color: rgb(37, 37, 37);
   padding: 56px 40px 32px;
+  height: 60vh;
 }
 .footer-container .footer-div-container {
   display: flex;
@@ -1733,7 +1734,7 @@ p {
   transform: translateY(-4px);
 }
 .footer-container .language-select {
-  display: block;
+  display: none;
   z-index: 2;
   background-color: rgb(37, 37, 37);
   animation-name: opacity;
