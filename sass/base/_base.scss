@@ -66,6 +66,9 @@
     &-baseline {
       justify-content: baseline;
     }
+    &-between {
+      justify-content: space-between;
+    }
   }
   &.align {
     &-flex-start {
@@ -80,6 +83,20 @@
     &-baseline {
       align-items: baseline;
     }
+    &-between {
+      align-items: space-between;
+    }
+  }
+}
+
+.w {
+  &-full {
+    width: 100%;
+  }
+}
+.h {
+  &-full {
+    height: 100%;
   }
 }
 
