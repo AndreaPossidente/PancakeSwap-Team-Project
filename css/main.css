@@ -1854,6 +1854,9 @@ body {
 }
 .reassurance-section .container .reassurance-description {
   max-width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   color: var(--colors-textSubtle);
   padding: 1rem;
   text-align: center;
@@ -3072,6 +3075,105 @@ a.trade-hero {
     font-size: 20px;
   }
 }
+.trade-section .container {
+  display: flex;
+  flex-flow: column;
+}
+@media screen and (min-width: 852px) {
+  .trade-section .container {
+    flex-flow: row-reverse;
+    align-items: center;
+  }
+}
+.trade-section .container .trade-coins {
+  width: 192px;
+  height: 192px;
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 852px) {
+  .trade-section .container .trade-coins {
+    width: 100%;
+    height: 100%;
+    flex: 1 1 0%;
+  }
+}
+.trade-section .container .trade-coins .trade-coins-container {
+  max-height: 512px;
+  position: relative;
+}
+.trade-section .container .trade-coins .trade-coins-container > img {
+  max-height: 512px;
+  visibility: hidden;
+  height: auto;
+  max-width: 100%;
+}
+.trade-section .container .trade-coins .trade-coins-container .trade-coins-elements {
+  width: 192px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.trade-section .container .trade-coins .trade-coins-container .trade-coins-elements:first-of-type {
+  animation: 3s ease-in-out 1s infinite normal none running anim-float-1;
+}
+.trade-section .container .trade-coins .trade-coins-container .trade-coins-elements:nth-child(3) {
+  animation: 2s ease-in-out 1s infinite normal none running anim-float-2;
+}
+.trade-section .container .trade-coins .trade-coins-container .trade-coins-elements:nth-child(4) {
+  animation: 3s ease-in-out 1s infinite normal none running anim-float-3;
+}
+.trade-section .container .trade-coins .trade-coins-container .trade-coins-elements img {
+  max-height: 100%;
+  width: auto;
+}
+@media screen and (min-width: 852px) {
+  .trade-section .container .trade-main {
+    flex: 1 1 0%;
+  }
+}
+.trade-section .container .trade-main .trade-header {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--colors-text);
+  margin-bottom: 24px;
+}
+.trade-section .container .trade-main .trade-header span {
+  color: var(--colors-secondary);
+}
+.trade-section .container .trade-main .trade-description {
+  color: var(--colors-textSubtle);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.trade-section .container .trade-main .trade-footer {
+  display: flex;
+}
+.trade-section .container .trade-main .trade-footer button {
+  height: 48px;
+  padding: 0px 24px;
+  margin-right: 16px;
+}
+.trade-section .container .trade-main .trade-footer a {
+  text-decoration: none;
+  color: var(--colors-primary);
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 16px;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  width: fit-content;
+}
+.trade-section .container .trade-main .trade-footer a svg {
+  fill: var(--colors-primary);
+}
+
 .header-nav .nav-hidden-opacity {
   visibility: hidden;
   position: fixed;
