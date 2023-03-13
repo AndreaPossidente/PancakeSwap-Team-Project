@@ -33,7 +33,7 @@
       @include m.media(md) {
         flex-direction: row;
         justify-content: space-between;
-        width: 1200px;
+        max-width: 1200px;
         margin-bottom: 36px;
       }
     }
@@ -81,7 +81,7 @@
     }
 
     @include m.media(md) {
-      width: 1200px;
+      max-width: 1200px;
     }
 
     &:has(#telegram:hover),
@@ -147,7 +147,7 @@
   justify-self: center;
 
   @include m.media(md) {
-    width: 1200px;
+    max-width: 1200px;
   }
 
   #language-footer-selector {
@@ -207,7 +207,7 @@
     border-radius: 16px;
 
     svg {
-      color: var(--colors-backgroundAlt);
+      fill: var(--colors-backgroundAlt);
     }
   }
 }

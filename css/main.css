@@ -1511,7 +1511,7 @@ p {
   }
 }
 #settings-modal.deactive {
-  z-index: 9999;
+  z-index: -9999;
   opacity: 0;
   max-height: 90vh;
   animation: 0.3s linear 0s 1 normal forwards running modal-slide-out;
@@ -1619,11 +1619,14 @@ p {
   width: 100vw;
   height: 1000vh;
   background-color: var(--colors-overlay);
+  z-index: -9999;
 }
 .modal-fade.active {
   animation: 0.3s linear 0s 1 normal forwards running fade-opacity;
+  z-index: -9000;
 }
 .modal-fade.deactive {
+  z-index: -9999;
   animation: 0.3s linear 0s 1 normal forwards running fade-opacity-out;
 }
 
@@ -4455,7 +4458,7 @@ main:has(.swap-wrapper) {
   .footer-container .footer-div-container .footer-div-inner {
     flex-direction: row;
     justify-content: space-between;
-    width: 1200px;
+    max-width: 1200px;
     margin-bottom: 36px;
   }
 }
@@ -4499,7 +4502,7 @@ main:has(.swap-wrapper) {
 }
 @media screen and (min-width: 576px) {
   .footer-container .social-footer-div {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 .footer-container .social-footer-div:has(#telegram:hover) .lista, .footer-container .social-footer-div:has(.lista:hover) .lista {
@@ -4557,7 +4560,7 @@ main:has(.swap-wrapper) {
 }
 @media screen and (min-width: 576px) {
   .language-footer-select-container {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 .language-footer-select-container #language-footer-selector {
@@ -4609,8 +4612,9 @@ main:has(.swap-wrapper) {
   border-radius: 16px;
 }
 .footer-right button svg {
-  color: var(--colors-backgroundAlt);
+  fill: var(--colors-backgroundAlt);
 }
+
 /*============ SUB MENU ============*/
 .sub-menu {
   position: relative;

@@ -2,21 +2,22 @@ let currentColorScheme = null;
 export let localColorScheme = localStorage.getItem("colorScheme");
 let root = document.querySelector(":root");
 let body = document.querySelector("body");
-const button = document.querySelector(".color-scheme-switcher");
-const bubble = document.querySelector(
+const buttons = document.querySelectorAll(".color-scheme-switcher");
+const bubbles = document.querySelectorAll(
   ".color-scheme-switcher .color-scheme-switcher-bubble"
 );
 
 const darkIcon = document.querySelector(".color-scheme-switcher .dark-icon");
 const lightIcon = document.querySelector(".color-scheme-switcher .light-icon");
 
-
 // button.innerHTML = "Dark Mode";
 
 if (localColorScheme == "dark") {
   root.classList.add("dark");
   // button.innerHTML = "Light Mode";
-  bubble.classList.add("dark");
+  bubbles.forEach((bubble) => {
+    bubble.classList.add("dark");
+  });
   darkIcon.style.display = "flex";
   lightIcon.style.display = "none";
 } else {
@@ -34,7 +35,9 @@ if (
 ) {
   root.classList.remove("dark");
   // button.innerHTML = "Light Mode";
-  bubble.classList.remove("dark");
+  bubbles.forEach((bubble) => {
+    bubble.classList.remove("dark");
+  });
   darkIcon.style.display = "none";
   lightIcon.style.display = "flex";
 } else if (
@@ -44,7 +47,9 @@ if (
   !localColorScheme
 ) {
   // button.innerHTML = "Dark Mode";
-  bubble.classList.add("dark");
+  bubbles.forEach((bubble) => {
+    bubble.classList.add("dark");
+  });
   darkIcon.style.display = "flex";
   lightIcon.style.display = "none";
 }
@@ -55,36 +60,46 @@ window
     if (event.matches && !currentColorScheme) {
       root.classList.add("dark");
       // button.innerHTML = "Light Mode";
-      bubble.classList.add("dark");
+      bubbles.forEach((bubble) => {
+        bubble.classList.add("dark");
+      });
       darkIcon.style.display = "flex";
       lightIcon.style.display = "none";
     } else if (!event.matches && !currentColorScheme) {
       root.classList.remove("dark");
       // button.innerHTML = "Dark Mode";
-      bubble.classList.remove("dark");
+      bubbles.forEach((bubble) => {
+        bubble.classList.remove("dark");
+      });
       darkIcon.style.display = "none";
       lightIcon.style.display = "flex";
     }
   });
 
-button.addEventListener("click", (e) => {
-  e.preventDefault();
-  root.classList.toggle("dark");
-  if (root.classList.contains("dark")) {
-    // button.innerHTML = "Light Mode";
-    bubble.classList.add("dark");
-    darkIcon.style.display = "flex";
-    lightIcon.style.display = "none";
-    currentColorScheme = "dark";
-    localColorScheme = "dark";
-    localStorage.setItem("colorScheme", "dark");
-  } else {
-    // button.innerHTML = "Dark Mode";
-    bubble.classList.remove("dark");
-    darkIcon.style.display = "none";
-    lightIcon.style.display = "flex";
-    currentColorScheme = "light";
-    localColorScheme = "light";
-    localStorage.setItem("colorScheme", "light");
-  }
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    root.classList.toggle("dark");
+    if (root.classList.contains("dark")) {
+      // button.innerHTML = "Light Mode";
+      bubbles.forEach((bubble) => {
+        bubble.classList.add("dark");
+      });
+      darkIcon.style.display = "flex";
+      lightIcon.style.display = "none";
+      currentColorScheme = "dark";
+      localColorScheme = "dark";
+      localStorage.setItem("colorScheme", "dark");
+    } else {
+      // button.innerHTML = "Dark Mode";
+      bubbles.forEach((bubble) => {
+        bubble.classList.remove("dark");
+      });
+      darkIcon.style.display = "none";
+      lightIcon.style.display = "flex";
+      currentColorScheme = "light";
+      localColorScheme = "light";
+      localStorage.setItem("colorScheme", "light");
+    }
+  });
 });
