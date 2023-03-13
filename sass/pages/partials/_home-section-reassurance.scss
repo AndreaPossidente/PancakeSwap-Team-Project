@@ -13,6 +13,9 @@
 
         .reassurance-description {
             max-width: 100%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
 
             @include m.media(lg) {
                 max-width: 50%;

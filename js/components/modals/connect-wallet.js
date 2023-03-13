@@ -8,7 +8,7 @@ try {
       if (connectModal.classList.contains("active")) {
         main.style.zIndex = "-1";
       } else {
-        main.style.zIndex = "101";
+        main.style.zIndex = "95";
       }
     });
   });
@@ -19,7 +19,8 @@ try {
     if (connectModal.classList.contains("active")) {
       main.style.zIndex = "-1";
     } else {
-      main.style.zIndex = "101";
+      main.style.zIndex = "95";
+
     }
   });
 
