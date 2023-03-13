@@ -7,7 +7,6 @@ import "./components/nav.js";
 import "./components/modals/connect-wallet.js";
 import "./components/modals/settings-modal.js";
 import "./components/chart.js";
-import "./utils/svg-footer.js";
 import drawChart from "./components/chart.js";
 
 drawChart("cake", "bnb");
