@@ -26,6 +26,8 @@ export default class SwapPanel {
     ".swap-panel-currency-form-input-sub"
   );
 
+  static #showOverlay = false;
+
   /**
    * Initializes the swap panel by adding event listeners, etc.
    * @returns {Promise<void>}
@@ -48,17 +50,24 @@ export default class SwapPanel {
       async (e) => await this.#handleInput(e.target, 1, !this.#isInverted)
     );
 
-    window.addEventListener("resize", () => {
-      if (this.#chart.style?.left === "-2000px") {
+    if (window.innerWidth >= 968) {
+      this.#overlay.classList.remove("visible");
+    } else {
+      if (this.#chart.classList.contains("hidden")) {
         this.#overlay.classList.remove("visible");
-        // this.#overlaySmall.classList.remove("visible");
       } else {
-        if (window.innerWidth >= 968) {
+        this.#overlay.classList.add("visible");
+      }
+    }
+
+    window.addEventListener("resize", (e) => {
+      if (window.innerWidth >= 968) {
+        this.#overlay.classList.remove("visible");
+      } else {
+        if (this.#chart.classList.contains("hidden")) {
           this.#overlay.classList.remove("visible");
-          // this.#overlaySmall.classList.remove("visible");
         } else {
           this.#overlay.classList.add("visible");
-          // this.#overlaySmall.classList.add("visible");
         }
       }
     });
@@ -75,16 +84,14 @@ export default class SwapPanel {
       token2Image.classList.add("hidden");
       this.#chart.classList.remove("hidden");
     }
-    if (this.#chart.style?.left === "-2000px") {
+
+    if (window.innerWidth >= 968) {
       this.#overlay.classList.remove("visible");
-      // this.#overlaySmall.classList.remove("visible");
     } else {
-      if (window.innerWidth > 968) {
+      if (this.#chart.classList.contains("hidden")) {
         this.#overlay.classList.remove("visible");
-        // this.#overlaySmall.classList.remove("visible");
       } else {
         this.#overlay.classList.add("visible");
-        // this.#overlaySmall.classList.add("visible");
       }
     }
   }

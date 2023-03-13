@@ -3780,6 +3780,7 @@ main:has(.swap-wrapper) {
   }
 }
 .swap-wrapper .swap-container > div .swap-chart-container.hidden {
+  position: fixed;
   left: -2000px;
 }
 .swap-wrapper .swap-container > div .swap-chart-container .swap-chart-header {

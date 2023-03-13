@@ -120,6 +120,7 @@ main:has(.swap-wrapper) {
           width: 50%;
         }
         &.hidden {
+          position: fixed;
           left: -2000px;
         }
 

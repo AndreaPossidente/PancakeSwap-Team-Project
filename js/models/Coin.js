@@ -9,10 +9,14 @@ export default class Coin {
 
   static async find() {
     try {
-      const data = await CoinGecko.query("coins/list").catch((err) => err);
-      return data.map((el) => new Coin(el));
+      const data = await CoinGecko.query("coins/list")
+        .catch((err) => err)
+        .catch((err) => undefined);
+      const res = await fetch("/js/components/dummy/coins.json");
+
+      return data.map((el) => new Coin(el)) || res.json();
     } catch (err) {
-      return await fetch("/js/components/dummy/coins.json");
+      return;
     }
   }
 
