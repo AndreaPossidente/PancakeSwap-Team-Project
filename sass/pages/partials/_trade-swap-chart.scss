@@ -8,30 +8,14 @@
   width: 100%;
   height: 100%;
   background-color: var(--colors-text99);
-  opacity: 1;
   transition: opacity 350ms ease-in;
-  z-index: 101;
+  opacity: 0;
+  z-index: -1;
   visibility: visible;
-  @include m.media(xl) {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.swap-overlay-small {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--colors-text99);
-  opacity: 1;
-  transition: opacity 350ms ease-in;
-  z-index: 101;
-  visibility: visible;
-  @include m.media(xl) {
-    opacity: 0;
-    visibility: hidden;
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 101;
   }
 }
 
@@ -90,6 +74,7 @@ main:has(.swap-wrapper) {
       }
     }
     > div {
+      flex-direction: row-reverse;
       z-index: 102;
       width: 328px;
       height: calc(100vh - 70px);
@@ -107,7 +92,7 @@ main:has(.swap-wrapper) {
       }
 
       .swap-chart-container {
-        z-index: 102;
+        z-index: 104;
         position: fixed;
         left: 0;
         bottom: 0;
@@ -133,6 +118,10 @@ main:has(.swap-wrapper) {
           padding-top: 8px;
           border-radius: 16px;
           width: 50%;
+        }
+        &.hidden {
+          position: fixed;
+          left: -2000px;
         }
 
         .swap-chart-header {
@@ -170,40 +159,50 @@ main:has(.swap-wrapper) {
             line-height: 1.5;
             font-size: 16px;
           }
-          > div > button {
-            z-index: 102;
-            position: relative;
-            -webkit-box-align: center;
-            align-items: center;
-            border: 0px;
-            border-radius: 16px;
-            cursor: pointer;
-            display: inline-flex;
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 600;
-            -webkit-box-pack: center;
-            justify-content: center;
-            letter-spacing: 0.03em;
-            line-height: 1;
-            opacity: 1;
-            outline: 0px;
-            transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
-            height: 48px;
-            background-color: transparent;
-            color: var(--colors-primary);
-            box-shadow: none;
-            padding: 0px;
-            width: 48px;
-            > svg {
+          > div {
+            .swap-zoom-btn {
+              display: none;
+              @include m.media(xl) {
+                display: block;
+              }
+            }
+            .swap-close-btn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              @include m.media(xl) {
+                display: none;
+              }
+            }
+            > button {
               z-index: 102;
-              align-self: center;
-              fill: var(--colors-primary);
-              flex-shrink: 0;
-              margin-left: 6px;
-              &.swap-btn-zoom {
+              position: relative;
+              -webkit-box-align: center;
+              align-items: center;
+              border: 0px;
+              border-radius: 16px;
+              cursor: pointer;
+              display: inline-flex;
+              font-family: inherit;
+              font-size: 16px;
+              font-weight: 600;
+              -webkit-box-pack: center;
+              justify-content: center;
+              letter-spacing: 0.03em;
+              line-height: 1;
+              opacity: 1;
+              outline: 0px;
+              transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+              height: 48px;
+              background-color: transparent;
+              color: var(--colors-primary);
+              box-shadow: none;
+              padding: 0px;
+              width: 48px;
+              > svg {
                 z-index: 102;
                 align-self: center;
+                justify-self: center;
                 fill: var(--colors-text);
                 flex-shrink: 0;
               }
