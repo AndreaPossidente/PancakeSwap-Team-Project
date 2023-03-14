@@ -485,6 +485,11 @@
         padding-right: 12px;
         padding-bottom: 4px;
         cursor: pointer;
+        
+        a{
+          display: flex;
+          flex-flow: column;
+        }
 
         &:hover {
           background: var(--colors-tertiary);

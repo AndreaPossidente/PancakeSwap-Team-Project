@@ -3619,6 +3619,10 @@ html.dark .bg-3 {
   padding-bottom: 4px;
   cursor: pointer;
 }
+.header-nav .nav-mobile .nav-bottom .nav-bottom-items a {
+  display: flex;
+  flex-flow: column;
+}
 .header-nav .nav-mobile .nav-bottom .nav-bottom-items:hover {
   background: var(--colors-tertiary);
   border-radius: 16px;

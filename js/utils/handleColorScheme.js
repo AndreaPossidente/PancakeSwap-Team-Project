@@ -2,9 +2,9 @@ let currentColorScheme = null;
 export let localColorScheme = localStorage.getItem("colorScheme");
 let root = document.querySelector(":root");
 let body = document.querySelector("body");
-const buttons = document.querySelectorAll(".color-scheme-switcher");
+const buttons = document.querySelectorAll(".color-scheme-switcher:not(.preserve)");
 const bubbles = document.querySelectorAll(
-  ".color-scheme-switcher .color-scheme-switcher-bubble"
+  ".color-scheme-switcher:not(.preserve) .color-scheme-switcher-bubble"
 );
 
 const darkIcon = document.querySelector(".color-scheme-switcher .dark-icon");
