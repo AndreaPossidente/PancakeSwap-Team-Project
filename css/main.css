@@ -2823,7 +2823,7 @@ body {
   }
 }
 .hero-swiper-section {
-  background: var(--colors-gradientBubblegum);
+  background: var(--colors-backgroundHero);
   margin: 0px;
   width: 100%;
   min-height: auto;
@@ -3019,15 +3019,7 @@ a.trade-hero {
   width: 100%;
   bottom: -3px;
   z-index: -1;
-}
-
-.sc-4ba21b47-0 {
-  display: block;
-  fill: var(--colors-text);
-}
-
-.IIbzK {
-  fill: var(--colors-text);
+  margin-bottom: -4px;
 }
 
 /*============= Hero Media Queries =============*/
@@ -3078,6 +3070,32 @@ a.trade-hero {
     font-size: 20px;
   }
 }
+.bg-1 {
+  stop-color: white;
+  stop-opacity: 0.48;
+}
+
+.bg-2 {
+  stop-color: white;
+  stop-opacity: 0.35;
+}
+
+.bg-3 {
+  stop-color: white;
+}
+
+html.dark .bg-1 {
+  stop-color: var(--colors-invertedText);
+  stop-opacity: 0.2;
+}
+html.dark .bg-2 {
+  stop-color: var(--colors-invertedText);
+  stop-opacity: 0.5;
+}
+html.dark .bg-3 {
+  stop-color: var(--colors-invertedText);
+}
+
 .trade-section {
   background: var(--colors-background);
 }
@@ -4888,11 +4906,13 @@ main:has(.swap-wrapper) {
   --colors-inputSecondary: #d7caec;
   --colors-tertiary: #eff4f5;
   --colors-text: #280d5f;
+  --colors-invertedText: #f4eeff;
   --colors-text99: rgba(40, 13, 95, 0.6);
   --colors-textDisabled: #bdc2c4;
   --colors-textSubtle: #7a6eaa;
   --colors-disabled: #e9eaeb;
   --colors-backgroundRe: rgba(215, 202, 236, 0.9019607843);
+  --colors-backgroundHero: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
   --colors-gradientBubblegum: linear-gradient(139.73deg, #e5fdff, #f3efff);
   --colors-gradientBubblegum2: linear-gradient(180deg, #fff 22%, #d7caec 100%);
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
@@ -4943,11 +4963,13 @@ main:has(.swap-wrapper) {
     --colors-inputSecondary: #d7caec;
     --colors-tertiary: #eff4f5;
     --colors-text: #280d5f;
+    --colors-invertedText: #f4eeff;
     --colors-text99: rgba(40, 13, 95, 0.6);
     --colors-textDisabled: #bdc2c4;
     --colors-textSubtle: #7a6eaa;
     --colors-disabled: #e9eaeb;
     --colors-backgroundRe: rgba(215, 202, 236, 0.9019607843);
+    --colors-backgroundHero: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
     --colors-gradientBubblegum: linear-gradient(139.73deg, #e5fdff, #f3efff);
     --colors-gradientBubblegum2: linear-gradient(180deg, #fff 22%, #d7caec 100%);
     --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #f3efff, #e5fdff);
@@ -4997,11 +5019,13 @@ main:has(.swap-wrapper) {
   --colors-inputSecondary: #262130;
   --colors-tertiary: #353547;
   --colors-text: #f4eeff;
+  --colors-invertedText: #08060b;
   --colors-text99: rgba(244, 238, 255, 0.6);
   --colors-textDisabled: #666171;
   --colors-textSubtle: #b8add2;
   --colors-disabled: #524b63;
   --colors-backgroundRe: #201335;
+  --colors-backgroundHero: radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%);
   --colors-gradientBubblegum: linear-gradient(139.73deg, #313d5c, #3d2a54);
   --colors-gradientBubblegum2: linear-gradient(180deg, #09070c 22%, #201335 100%);
   --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #3d2a54, #313d5c);
